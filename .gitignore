@@ -8,3 +8,5 @@ next-env.d.ts
 
 # Source material — keep local only
 *.pdf
+.vercel
+.env*.local

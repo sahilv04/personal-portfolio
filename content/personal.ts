@@ -6,7 +6,7 @@ export const personal = {
   short:
     "Passionate engineer building end-to-end products — sustainable, scalable systems that create impact.",
   location: "Chandigarh, India",
-  email: "hello@sahilverma.in",
+  email: "sahilv04@gmail.com",
   availability:
     "Available on almost every social media — replies within 24 hours. Happy to help with React, Angular, NodeJS, Cloud and Opensource development.",
   headline:
@@ -19,7 +19,7 @@ export const personal = {
     github: "https://github.com/sahil04",
     linkedin: "https://www.linkedin.com/in/sahil-verma-421133147/",
     twitter: "https://x.com/sahilv04",
-    email: "mailto:hello@sahilverma.in",
+    email: "mailto:sahilv04@gmail.com",
     instagram: "https://www.instagram.com/ess__vee/",
     blog: "https://sahilverma.in/blog",
   },

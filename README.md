@@ -56,5 +56,5 @@ Then deploy the repo to Vercel (or any Node host). Most pages are statically gen
 
 ## Notes
 - Replace social URLs in `content/personal.ts` with your real handles.
-- Replace `hello@sahilverma.dev` with the address you want to receive enquiries on.
+- Replace `sahilv04@gmail.com` with the address you want to receive enquiries on.
 - Drop a real `og-image.png` into `public/` and add it to `lib/seo.ts` if desired.

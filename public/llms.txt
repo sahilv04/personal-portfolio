@@ -11,7 +11,7 @@ This file gives LLMs and AI search engines a concise, factual summary of who Sah
 - Previous role: Specialist Programmer at Infosys (April 2021 – 2024), incl. multi-year on-site delivery in London, UK
 - Discipline: Full Stack Engineer (React, Angular, Node.js, Cloud, Opensource)
 - Website: https://sahilverma.in
-- Email: hello@sahilverma.in
+- Email: sahilv04@gmail.com
 - GitHub: https://github.com/sahil04
 - LinkedIn: https://www.linkedin.com/in/sahil-verma-421133147/
 - X / Twitter: https://x.com/sahilv04
