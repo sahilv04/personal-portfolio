@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CursorTrail from "@/components/ui/CursorTrail";
 import { JsonLd, personSchema, websiteSchema, professionalServiceSchema } from "@/lib/jsonld";
 import { SITE_URL, personal } from "@/content/personal";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main id="main">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
