@@ -43,6 +43,11 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", creator: "@sahilv04" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   icons: { icon: "/favicon.svg" },
+  verification: {
+    other: {
+      "msvalidate.01": "53693C8309BC4753CF83A989893E0951",
+    },
+  },
 };
 
 export const viewport: Viewport = {
