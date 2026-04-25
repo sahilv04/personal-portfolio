@@ -1,13 +1,13 @@
 import Section from "@/components/ui/Section";
 import ContactForm from "@/components/sections/ContactForm";
 import { buildMetadata } from "@/lib/seo";
-import { JsonLd, breadcrumb } from "@/lib/jsonld";
+import { JsonLd, breadcrumb, pageSchema } from "@/lib/jsonld";
 import { personal } from "@/content/personal";
 
 export const metadata = buildMetadata({
   title: "Contact",
   description:
-    "Get in touch with Sahil Verma — Specialist Programmer and Full Stack Engineer. Happy to chat about React, Angular, Node.js, Cloud and Opensource development.",
+    "Get in touch with Sahil Verma — Technical Lead and Full Stack Engineer. Happy to chat about React, Angular, Node.js, Cloud and Opensource development.",
   path: "/contact",
 });
 
@@ -15,6 +15,7 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd data={breadcrumb([{ name: "Home", href: "/" }, { name: "Contact", href: "/contact" }])} />
+      <JsonLd data={pageSchema({ type: "ContactPage", name: `Contact ${personal.name}`, description: "Get in touch with Sahil Verma — Technical Lead and Full Stack Engineer.", path: "/contact" })} />
       <Section
         eyebrow="Contact"
         title="Tell me what you're building."

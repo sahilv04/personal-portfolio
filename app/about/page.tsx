@@ -2,13 +2,13 @@ import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
 import { personal } from "@/content/personal";
 import { buildMetadata } from "@/lib/seo";
-import { JsonLd, breadcrumb } from "@/lib/jsonld";
+import { JsonLd, breadcrumb, pageSchema } from "@/lib/jsonld";
 import CTA from "@/components/sections/CTA";
 
 export const metadata = buildMetadata({
   title: "About",
   description:
-    "About Sahil Verma — Specialist Programmer at Infosys (London) and Full Stack Engineer specialising in React, Angular, Node.js, Cloud and Opensource development.",
+    "About Sahil Verma — Technical Lead at Webmob Software Solutions and Full Stack Engineer (ex-Infosys, London) specialising in React, Angular, Node.js, Cloud and Opensource development.",
   path: "/about",
 });
 
@@ -16,6 +16,7 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd data={breadcrumb([{ name: "Home", href: "/" }, { name: "About", href: "/about" }])} />
+      <JsonLd data={pageSchema({ type: "AboutPage", name: `About ${personal.name}`, description: personal.summary, path: "/about" })} />
       <Section
         eyebrow="About Sahil Verma"
         title="A passionate full stack engineer building end-to-end products."

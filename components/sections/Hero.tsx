@@ -32,25 +32,16 @@ export default function Hero() {
         </motion.p>
 
         <h1 className="font-display text-[clamp(2.4rem,6vw,5.5rem)] leading-[1.05] tracking-tight">
-          <motion.span
-            initial={reduce ? false : { opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="block text-ink-dim"
-          >
-            {personal.name}.
-          </motion.span>
+          <span className="block text-ink-dim">{personal.name}.</span>{" "}
           <span className="block">
             {words.map((w, i) => (
-              <motion.span
+              <span
                 key={`${w}-${i}`}
-                initial={reduce ? false : { opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + i * 0.04, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="text-gradient mr-[0.28em] inline-block"
+                className="hero-word text-gradient mr-[0.28em]"
+                style={{ ["--d" as string]: `${0.08 + i * 0.04}s` }}
               >
                 {w}
-              </motion.span>
+              </span>
             ))}
           </span>
         </h1>

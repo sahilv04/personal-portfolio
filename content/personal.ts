@@ -15,6 +15,8 @@ export const personal = {
     "I'm a passionate Full Stack Engineer based in Chandigarh, India. I lead small teams, design and ship enterprise-grade applications, and care deeply about sustainable, scalable systems that actually create impact for the people who use them.",
   summary:
     "Sahil Verma is a Technical Lead at Webmob Software Solutions, leading engineers on enterprise-scale, highly responsive applications. Previously a Specialist Programmer at Infosys with a multi-year on-site engagement in London delivering for UK clients. AWS-certified across Cloud Practitioner, Solutions Architect Associate and AI Practitioner; Microsoft Azure Fundamentals (incl. AI); R3 Corda Certified Developer.",
+  metaDescription:
+    "Sahil Verma — Technical Lead at Webmob Software Solutions. Full stack engineer (React, Angular, Node.js, AWS). Previously Infosys, on-site UK delivery.",
   socials: {
     github: "https://github.com/sahilv04",
     linkedin: "https://www.linkedin.com/in/sahil-verma-421133147/",

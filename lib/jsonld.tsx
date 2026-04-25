@@ -109,6 +109,28 @@ export const faqSchema = {
   })),
 };
 
+type PageSchemaArgs = {
+  type?: "WebPage" | "AboutPage" | "ContactPage" | "CollectionPage";
+  name: string;
+  description: string;
+  path: string;
+};
+
+export function pageSchema({ type = "WebPage", name, description, path }: PageSchemaArgs) {
+  const url = new URL(path, SITE_URL).toString();
+  return {
+    "@context": "https://schema.org",
+    "@type": type,
+    name,
+    description,
+    url,
+    inLanguage: "en",
+    isPartOf: { "@type": "WebSite", url: SITE_URL, name: `${personal.name} — ${personal.role}` },
+    about: { "@type": "Person", name: personal.name, url: SITE_URL },
+    dateModified: BUILD_DATE,
+  };
+}
+
 export function breadcrumb(items: Array<{ name: string; href: string }>) {
   return {
     "@context": "https://schema.org",
