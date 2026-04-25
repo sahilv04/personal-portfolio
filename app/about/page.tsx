@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
 import { personal } from "@/content/personal";
@@ -53,6 +54,17 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.08}>
             <aside className="glass rounded-2xl p-6">
+              <div className="mb-6 overflow-hidden rounded-xl border border-white/10">
+                <Image
+                  src="/sahil-verma.jpg"
+                  alt={`${personal.name} — ${personal.role}, based in ${personal.location}`}
+                  width={897}
+                  height={1200}
+                  priority
+                  sizes="(max-width: 768px) 100vw, 380px"
+                  className="h-auto w-full object-cover"
+                />
+              </div>
               <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">Snapshot</p>
               <dl className="mt-4 grid gap-3 text-sm">
                 <div className="flex justify-between gap-4">

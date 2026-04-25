@@ -1,5 +1,39 @@
 export type FAQ = { q: string; a: string };
 
+export const servicesFaqs: FAQ[] = [
+  {
+    q: "What services does Sahil offer?",
+    a: "End-to-end product engineering: React and Angular frontend development, Node.js and REST API backends, AWS cloud engineering, R3 Corda / distributed-ledger work, opensource contributions, and technical leadership for ~5-engineer scrum teams.",
+  },
+  {
+    q: "Does Sahil work with startups or only enterprise teams?",
+    a: "Both. The day-job experience is enterprise-grade (Infosys, Webmob, OATI), but the engineering style — clear scope, tight iterations, code review culture — works equally well for startups looking for a senior pair of hands.",
+  },
+  {
+    q: "Can Sahil lead a team or only contribute as an IC?",
+    a: "Either. Currently leading frontend architecture and delivery as Technical Lead at Webmob; previously led ~5-engineer teams at Infosys (London) and Webmob. Comfortable owning estimation, sprint planning, code review and hiring.",
+  },
+  {
+    q: "What's the typical engagement model?",
+    a: "Either retained delivery against a clear scope or advisory + hands-on tech-lead support. Reach out via the contact form or email and we'll scope it together.",
+  },
+];
+
+export const contactFaqs: FAQ[] = [
+  {
+    q: "How quickly does Sahil reply?",
+    a: "Within 24 hours. Email is the fastest channel; LinkedIn, GitHub and X also reach me reliably.",
+  },
+  {
+    q: "What time zone does Sahil work in?",
+    a: "India Standard Time (IST), based in Chandigarh. Comfortable with UK time zones from prior on-site delivery in London for Infosys.",
+  },
+  {
+    q: "What kind of projects is Sahil open to?",
+    a: "React, Angular, Node.js, AWS cloud, opensource and technical leadership engagements. Happy to discuss enterprise platforms, fintech, product engineering and tech-lead support.",
+  },
+];
+
 export const faqs: FAQ[] = [
   {
     q: "What does Sahil Verma do?",

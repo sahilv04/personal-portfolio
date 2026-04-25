@@ -1,7 +1,7 @@
 import Section from "@/components/ui/Section";
 import ExperienceTimeline from "@/components/sections/ExperienceTimeline";
 import { buildMetadata } from "@/lib/seo";
-import { JsonLd, breadcrumb } from "@/lib/jsonld";
+import { JsonLd, breadcrumb, pageSchema } from "@/lib/jsonld";
 import CTA from "@/components/sections/CTA";
 
 export const metadata = buildMetadata({
@@ -15,6 +15,7 @@ export default function ExperiencePage() {
   return (
     <>
       <JsonLd data={breadcrumb([{ name: "Home", href: "/" }, { name: "Experience", href: "/experience" }])} />
+      <JsonLd data={pageSchema({ type: "CollectionPage", name: "Experience of Sahil Verma", description: "Technical Lead at Webmob, Specialist Programmer at Infosys (London), Software Developer at OATI.", path: "/experience" })} />
       <Section
         eyebrow="Experience"
         title="A timeline of full stack engineering and technical leadership."

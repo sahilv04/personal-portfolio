@@ -1,5 +1,7 @@
 # Sahil Verma — Technical Lead · Full Stack Engineer
 
+> Last updated: 2026-04-25
+
 Personal portfolio of Sahil Verma, a Technical Lead and Full Stack Engineer based in
 Chandigarh, India. Currently at Webmob Software Solutions; previously at Infosys,
 where he delivered a multi-year on-site engagement for UK clients in London.
@@ -81,6 +83,26 @@ and scalable social and technical systems to create impact."
 ## Availability
 "I am available on almost every social media. You can message me, I will reply within 24 hours.
 I can help you with React, Angular, NodeJS, Cloud and Opensource Development."
+
+## Selected projects
+- Enterprise Responsive Platform — Infosys, Full Stack, 2021 — Present (React, Node.js, AWS)
+- Fintech Enterprise Platform — Webmob, Financial domain, 2019 — 2021 (React, Node.js, MongoDB)
+- Power Domain — Deal Entry — OATI, Energy / Enterprise product, 2016 — 2018
+- Opensource & Blogs — Ongoing (React, Next.js, technical writing)
+
+## Frequently asked
+- Q: What does Sahil Verma do?
+  A: Technical Lead at Webmob Software Solutions, leading frontend architecture and delivery on enterprise-grade applications. Full Stack Engineer across React, Angular, Node.js, Cloud and Opensource. Previously a Specialist Programmer at Infosys with a multi-year on-site engagement in London for UK clients.
+- Q: Where is Sahil based?
+  A: Chandigarh, India. Comfortable working across India and UK time zones; previously delivered on-site in London.
+- Q: Which technologies does Sahil work with?
+  A: React, Angular, TypeScript, Node.js, Express, REST APIs, MongoDB, AWS, R3 Corda, Docker, Git, Jest and Cypress.
+- Q: Which certifications does Sahil hold?
+  A: AWS Certified Cloud Practitioner, Solutions Architect — Associate and AI Practitioner; Microsoft Azure Fundamentals and Azure AI Fundamentals; Corda Certified Developer (R3); Infosys Certified React Native Developer and Zero to Merge.
+- Q: What is Sahil's education?
+  A: B.Tech in Computer Engineering from Punjabi University, Patiala (2016 – 2020).
+- Q: Is Sahil available for work?
+  A: Yes — reachable on most social platforms; replies within 24 hours. Happy to help with React, Angular, Node.js, Cloud and Opensource development.
 
 ## Crawl map
 - /            — Home

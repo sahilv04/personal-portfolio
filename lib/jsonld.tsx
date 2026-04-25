@@ -1,5 +1,6 @@
 import { SITE_URL, personal } from "@/content/personal";
 import { faqs } from "@/content/faq";
+import type { FAQ } from "@/content/faq";
 import { certifications } from "@/content/education";
 
 const monthMap: Record<string, string> = {
@@ -24,6 +25,14 @@ export const personSchema = {
   jobTitle: personal.role,
   description: personal.summary,
   url: SITE_URL,
+  image: {
+    "@type": "ImageObject",
+    url: new URL("/sahil-verma.jpg", SITE_URL).toString(),
+    contentUrl: new URL("/sahil-verma.jpg", SITE_URL).toString(),
+    width: 897,
+    height: 1200,
+    caption: `${personal.name} — ${personal.role}`,
+  },
   dateModified: BUILD_DATE,
   email: personal.email,
   address: { "@type": "Place", name: personal.location },
@@ -99,15 +108,19 @@ export const professionalServiceSchema = {
   provider: { "@type": "Person", name: personal.name },
 };
 
-export const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
+export function faqPageSchema(items: FAQ[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+}
+
+export const faqSchema = faqPageSchema(faqs);
 
 type PageSchemaArgs = {
   type?: "WebPage" | "AboutPage" | "ContactPage" | "CollectionPage";

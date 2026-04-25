@@ -39,8 +39,25 @@ export const metadata: Metadata = {
     title: `${personal.name} — ${personal.role}`,
     description: personal.metaDescription,
     siteName: `${personal.name}`,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${personal.name} — ${personal.role}, based in ${personal.location}`,
+      },
+    ],
   },
-  twitter: { card: "summary_large_image", creator: "@sahilv04" },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@sahilv04",
+    images: [
+      {
+        url: "/opengraph-image",
+        alt: `${personal.name} — ${personal.role}, based in ${personal.location}`,
+      },
+    ],
+  },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   icons: { icon: "/favicon.svg" },
   verification: {

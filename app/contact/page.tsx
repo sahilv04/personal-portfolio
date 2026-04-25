@@ -1,7 +1,9 @@
 import Section from "@/components/ui/Section";
 import ContactForm from "@/components/sections/ContactForm";
+import FAQ from "@/components/sections/FAQ";
 import { buildMetadata } from "@/lib/seo";
-import { JsonLd, breadcrumb, pageSchema } from "@/lib/jsonld";
+import { JsonLd, breadcrumb, pageSchema, faqPageSchema } from "@/lib/jsonld";
+import { contactFaqs } from "@/content/faq";
 import { personal } from "@/content/personal";
 
 export const metadata = buildMetadata({
@@ -16,6 +18,7 @@ export default function ContactPage() {
     <>
       <JsonLd data={breadcrumb([{ name: "Home", href: "/" }, { name: "Contact", href: "/contact" }])} />
       <JsonLd data={pageSchema({ type: "ContactPage", name: `Contact ${personal.name}`, description: "Get in touch with Sahil Verma — Technical Lead and Full Stack Engineer.", path: "/contact" })} />
+      <JsonLd data={faqPageSchema(contactFaqs)} />
       <Section
         eyebrow="Contact"
         title="Tell me what you're building."
@@ -57,6 +60,9 @@ export default function ContactPage() {
             </div>
           </aside>
         </div>
+      </Section>
+      <Section eyebrow="FAQ" title="Quick questions before reaching out.">
+        <FAQ items={contactFaqs} />
       </Section>
     </>
   );

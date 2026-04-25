@@ -1,7 +1,7 @@
 import Section from "@/components/ui/Section";
 import ProjectsGrid from "@/components/sections/ProjectsGrid";
 import { buildMetadata } from "@/lib/seo";
-import { JsonLd, breadcrumb } from "@/lib/jsonld";
+import { JsonLd, breadcrumb, pageSchema } from "@/lib/jsonld";
 import CTA from "@/components/sections/CTA";
 
 export const metadata = buildMetadata({
@@ -15,6 +15,7 @@ export default function ProjectsPage() {
   return (
     <>
       <JsonLd data={breadcrumb([{ name: "Home", href: "/" }, { name: "Projects", href: "/projects" }])} />
+      <JsonLd data={pageSchema({ type: "CollectionPage", name: "Projects by Sahil Verma", description: "Selected projects and case studies — enterprise platforms, financial-domain apps and opensource work.", path: "/projects" })} />
       <Section
         eyebrow="Selected work"
         title="Projects, case studies and the systems behind them."

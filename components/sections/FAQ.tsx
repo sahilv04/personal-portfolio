@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { faqs } from "@/content/faq";
+import { faqs as defaultFaqs, type FAQ as FAQItem } from "@/content/faq";
 
-export default function FAQ() {
+export default function FAQ({ items = defaultFaqs }: { items?: FAQItem[] }) {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <div className="mx-auto max-w-3xl divide-y divide-white/5 rounded-2xl border border-white/8 bg-white/[0.02]">
-      {faqs.map((f, i) => {
+      {items.map((f, i) => {
         const isOpen = open === i;
         return (
           <div key={f.q}>

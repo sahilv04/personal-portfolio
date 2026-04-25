@@ -2,7 +2,7 @@ import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
 import { degrees, certifications } from "@/content/education";
 import { buildMetadata } from "@/lib/seo";
-import { JsonLd, breadcrumb } from "@/lib/jsonld";
+import { JsonLd, breadcrumb, pageSchema } from "@/lib/jsonld";
 import CTA from "@/components/sections/CTA";
 
 export const metadata = buildMetadata({
@@ -16,6 +16,7 @@ export default function EducationPage() {
   return (
     <>
       <JsonLd data={breadcrumb([{ name: "Home", href: "/" }, { name: "Education", href: "/education" }])} />
+      <JsonLd data={pageSchema({ type: "CollectionPage", name: "Education and certifications of Sahil Verma", description: "B.Tech in Computer Engineering, AWS, Azure and R3 Corda certifications.", path: "/education" })} />
       <Section
         eyebrow="Education"
         title="Basic qualification and certifications."
