@@ -15,6 +15,8 @@ function toIso(date?: string) {
   return `${y}-${mm}`;
 }
 
+const BUILD_DATE = new Date().toISOString().split("T")[0];
+
 export const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -22,6 +24,7 @@ export const personSchema = {
   jobTitle: personal.role,
   description: personal.summary,
   url: SITE_URL,
+  dateModified: BUILD_DATE,
   email: personal.email,
   address: { "@type": "Place", name: personal.location },
   worksFor: { "@type": "Organization", name: "Webmob Software Solutions" },
@@ -76,6 +79,7 @@ export const websiteSchema = {
   name: `${personal.name} — ${personal.role}`,
   inLanguage: "en",
   publisher: { "@type": "Person", name: personal.name },
+  dateModified: BUILD_DATE,
 };
 
 export const professionalServiceSchema = {
