@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CursorTrail from "@/components/ui/CursorTrail";
 import { JsonLd, personSchema, websiteSchema, professionalServiceSchema } from "@/lib/jsonld";
 import { SITE_URL, personal } from "@/content/personal";
 
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
+        <CursorTrail />
         <Navbar />
         <main id="main">{children}</main>
         <Footer />

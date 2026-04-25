@@ -1,9 +1,9 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Icosahedron, MeshDistortMaterial, Stars } from "@react-three/drei";
+import { Float } from "@react-three/drei";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Group, Mesh } from "three";
+import { Group, Mesh, Vector3 } from "three";
 
 function usePrefersReducedMotion() {
   const [reduce, setReduce] = useState(false);
@@ -17,63 +17,91 @@ function usePrefersReducedMotion() {
   return reduce;
 }
 
-function Knot({ reduce }: { reduce: boolean }) {
-  const ref = useRef<Mesh>(null);
-  useFrame((_, dt) => {
-    if (!ref.current || reduce) return;
-    ref.current.rotation.x += dt * 0.18;
-    ref.current.rotation.y += dt * 0.24;
-  });
-  return (
-    <Float floatIntensity={1.2} speed={1.4} rotationIntensity={0.4}>
-      <mesh ref={ref}>
-        <torusKnotGeometry args={[1.0, 0.32, 220, 32]} />
-        <MeshDistortMaterial
-          color="#7c5cff"
-          emissive="#3a1f8f"
-          emissiveIntensity={0.45}
-          metalness={0.7}
-          roughness={0.18}
-          distort={0.32}
-          speed={1.4}
-        />
-      </mesh>
-    </Float>
+// Convert lat/lon (degrees) to a unit-sphere position.
+function latLonToVec3(lat: number, lon: number, radius = 1) {
+  const phi = (90 - lat) * (Math.PI / 180);
+  const theta = (lon + 180) * (Math.PI / 180);
+  return new Vector3(
+    -radius * Math.sin(phi) * Math.cos(theta),
+    radius * Math.cos(phi),
+    radius * Math.sin(phi) * Math.sin(theta)
   );
 }
 
-function OrbitingShards({ reduce }: { reduce: boolean }) {
+const markers = [
+  { name: "London", lat: 51.5074, lon: -0.1278, hot: true },
+  { name: "Mohali", lat: 30.7046, lon: 76.7179, hot: true },
+  { name: "Patiala", lat: 30.3398, lon: 76.3869, hot: false },
+  { name: "New York", lat: 40.7128, lon: -74.006, hot: false },
+  { name: "Tokyo", lat: 35.6762, lon: 139.6503, hot: false },
+  { name: "Singapore", lat: 1.3521, lon: 103.8198, hot: false },
+  { name: "Sydney", lat: -33.8688, lon: 151.2093, hot: false },
+  { name: "São Paulo", lat: -23.5505, lon: -46.6333, hot: false },
+];
+
+function Marker({ position, hot }: { position: Vector3; hot: boolean }) {
+  const ref = useRef<Mesh>(null);
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+    const t = clock.getElapsedTime();
+    const pulse = hot ? 1 + Math.sin(t * 2.4) * 0.25 : 1;
+    ref.current.scale.setScalar(pulse);
+  });
+  return (
+    <mesh ref={ref} position={position}>
+      <sphereGeometry args={[0.022, 16, 16]} />
+      <meshBasicMaterial color={hot ? "#ff5cd6" : "#5cf2ff"} toneMapped={false} />
+    </mesh>
+  );
+}
+
+function Globe({ reduce }: { reduce: boolean }) {
   const group = useRef<Group>(null);
-  const shards = useMemo(
-    () =>
-      new Array(8).fill(0).map((_, i) => ({
-        angle: (i / 8) * Math.PI * 2,
-        radius: 2.4 + (i % 3) * 0.18,
-        size: 0.16 + ((i * 13) % 5) * 0.04,
-      })),
+  const positions = useMemo(
+    () => markers.map((m) => ({ ...m, vec: latLonToVec3(m.lat, m.lon, 1.6) })),
     []
   );
+
   useFrame((_, dt) => {
     if (!group.current || reduce) return;
     group.current.rotation.y += dt * 0.12;
-    group.current.rotation.x += dt * 0.04;
   });
+
   return (
-    <group ref={group}>
-      {shards.map((s, i) => (
-        <Icosahedron
-          key={i}
-          args={[s.size, 0]}
-          position={[Math.cos(s.angle) * s.radius, Math.sin(s.angle) * 0.6, Math.sin(s.angle) * s.radius]}
-        >
-          <meshStandardMaterial
-            color={i % 2 === 0 ? "#5cf2ff" : "#ff5cd6"}
-            emissive={i % 2 === 0 ? "#0c4a4f" : "#4a0c3a"}
-            emissiveIntensity={0.5}
-            metalness={0.6}
-            roughness={0.2}
-          />
-        </Icosahedron>
+    <group ref={group} rotation={[0.35, 0, 0]}>
+      {/* Solid inner core for depth */}
+      <mesh>
+        <sphereGeometry args={[1.58, 64, 64]} />
+        <meshStandardMaterial
+          color="#0a0a1f"
+          emissive="#1a0f4a"
+          emissiveIntensity={0.4}
+          metalness={0.3}
+          roughness={0.6}
+        />
+      </mesh>
+
+      {/* Wireframe outer shell */}
+      <mesh>
+        <icosahedronGeometry args={[1.6, 4]} />
+        <meshBasicMaterial
+          color="#7c5cff"
+          wireframe
+          transparent
+          opacity={0.35}
+          toneMapped={false}
+        />
+      </mesh>
+
+      {/* Subtle outer glow ring */}
+      <mesh>
+        <sphereGeometry args={[1.66, 48, 48]} />
+        <meshBasicMaterial color="#5cf2ff" transparent opacity={0.05} />
+      </mesh>
+
+      {/* City markers */}
+      {positions.map((m) => (
+        <Marker key={m.name} position={m.vec} hot={m.hot} />
       ))}
     </group>
   );
@@ -85,15 +113,15 @@ export default function HeroScene() {
     <Canvas
       dpr={[1, 1.6]}
       gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
-      camera={{ position: [0, 0, 5.5], fov: 50 }}
+      camera={{ position: [0, 0, 5], fov: 45 }}
       className="!absolute inset-0"
     >
       <ambientLight intensity={0.45} />
-      <directionalLight position={[4, 6, 4]} intensity={1.2} color="#fff" />
+      <directionalLight position={[4, 6, 4]} intensity={1.0} color="#fff" />
       <directionalLight position={[-5, -2, -3]} intensity={0.6} color="#7c5cff" />
-      <Stars radius={50} depth={30} count={1400} factor={3} saturation={0} fade speed={0.6} />
-      <Knot reduce={reduce} />
-      <OrbitingShards reduce={reduce} />
+      <Float floatIntensity={0.4} speed={0.8} rotationIntensity={0.1}>
+        <Globe reduce={reduce} />
+      </Float>
     </Canvas>
   );
 }
