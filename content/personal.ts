@@ -2,19 +2,19 @@ export const SITE_URL = "https://sahilverma.in";
 
 export const personal = {
   name: "Sahil Verma",
-  role: "Specialist Programmer · Full Stack Engineer",
+  role: "Technical Lead · Full Stack Engineer",
   short:
     "Passionate engineer building end-to-end products — sustainable, scalable systems that create impact.",
-  location: "London, United Kingdom",
+  location: "Chandigarh, India",
   email: "hello@sahilverma.in",
   availability:
     "Available on almost every social media — replies within 24 hours. Happy to help with React, Angular, NodeJS, Cloud and Opensource development.",
   headline:
     "I build end-to-end products and lead the engineers who ship them — React, Angular, Node.js, Cloud and Opensource at enterprise scale.",
   intro:
-    "I'm a passionate Full Stack Engineer based in London. I lead small teams, design and ship enterprise-grade applications, and care deeply about sustainable, scalable systems that actually create impact for the people who use them.",
+    "I'm a passionate Full Stack Engineer based in Chandigarh, India. I lead small teams, design and ship enterprise-grade applications, and care deeply about sustainable, scalable systems that actually create impact for the people who use them.",
   summary:
-    "Sahil Verma is a Specialist Programmer at Infosys (London) leading a team of ~5 engineers on enterprise-scale, highly responsive applications. AWS Certified Cloud Practitioner and R3 Corda Certified Developer, with prior leadership and engineering experience at Webmob Software Solutions and OATI across the financial and power domains.",
+    "Sahil Verma is a Technical Lead at Webmob Software Solutions, leading engineers on enterprise-scale, highly responsive applications. Previously a Specialist Programmer at Infosys with a multi-year on-site engagement in London delivering for UK clients. AWS-certified across Cloud Practitioner, Solutions Architect Associate and AI Practitioner; Microsoft Azure Fundamentals (incl. AI); R3 Corda Certified Developer.",
   socials: {
     github: "https://github.com/sahil04",
     linkedin: "https://www.linkedin.com/in/sahil-verma-421133147/",

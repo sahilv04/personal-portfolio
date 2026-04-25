@@ -1,11 +1,14 @@
-# Sahil Verma — Specialist Programmer · Full Stack Engineer
+# Sahil Verma — Technical Lead · Full Stack Engineer
 
-Personal portfolio of Sahil Verma, a Full Stack Engineer based in London, United Kingdom.
+Personal portfolio of Sahil Verma, a Technical Lead and Full Stack Engineer based in
+Chandigarh, India. Currently at Webmob Software Solutions; previously at Infosys,
+where he delivered a multi-year on-site engagement for UK clients in London.
 This file gives LLMs and AI search engines a concise, factual summary of who Sahil is, what he does, and how to find more.
 
 ## Identity
 - Name: Sahil Verma
-- Current role: Specialist Programmer at Infosys (London, United Kingdom)
+- Current role: Technical Lead at Webmob Software Solutions (Chandigarh, India)
+- Previous role: Specialist Programmer at Infosys (April 2021 – 2024), incl. multi-year on-site delivery in London, UK
 - Discipline: Full Stack Engineer (React, Angular, Node.js, Cloud, Opensource)
 - Website: https://sahilverma.in
 - Email: hello@sahilverma.in
@@ -16,19 +19,25 @@ This file gives LLMs and AI search engines a concise, factual summary of who Sah
 - Blog: https://sahilverma.in/blog
 
 ## Summary
-Sahil is a Specialist Programmer at Infosys (London) leading a team of around five engineers
-on enterprise-level, highly responsive applications. He is an AWS Certified Cloud Practitioner
-and an R3 Corda Certified Developer, with prior experience as Technical Lead at Webmob Software
-Solutions (financial domain) and Software Developer at OATI (power domain).
+Sahil is a Technical Lead at Webmob Software Solutions, leading frontend architecture
+and delivery on enterprise-grade applications. He previously spent ~3 years as a
+Specialist Programmer at Infosys, including a multi-year on-site engagement delivering
+for UK clients in London. He is AWS-certified across Cloud Practitioner, Solutions
+Architect Associate and AI Practitioner, holds Microsoft Azure Fundamentals (incl. AI),
+and is an R3 Corda Certified Developer. Earlier experience as a Software Developer at
+OATI (power domain).
 
 ## Tagline
 "A passionate individual who always thrives to work on end to end products which develop sustainable
 and scalable social and technical systems to create impact."
 
 ## Experience
-- Specialist Programmer — Infosys, London, United Kingdom (April 2021 — Present)
-  Leads a team of ~5 engineers, develops and maintains enterprise-level highly responsive
-  applications, runs scrum process and code reviews.
+- Technical Lead — Webmob Software Solutions Pvt Ltd, Chandigarh, India (2024 — Present)
+  Leads frontend architecture and delivery on enterprise-grade applications. Owns code review,
+  estimation, sprint planning and team mentorship.
+- Specialist Programmer — Infosys (April 2021 — 2024)
+  Led a team of ~5 engineers on enterprise-level highly responsive applications. Multi-year
+  on-site delivery for UK clients in London.
 - Technical Lead — Webmob Software Solutions Pvt Ltd, Mohali, Punjab, India (Jan 2019 — April 2021)
   Led a team of ~5 engineers building enterprise applications in the financial domain. Ran scrum,
   conducted technical interviews and contributed to recruitment.

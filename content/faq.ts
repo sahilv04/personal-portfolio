@@ -3,7 +3,7 @@ export type FAQ = { q: string; a: string };
 export const faqs: FAQ[] = [
   {
     q: "What does Sahil Verma do?",
-    a: "Sahil Verma is a Specialist Programmer at Infosys (London), leading a team of around five engineers building enterprise-level, highly responsive applications. He works as a Full Stack Engineer across React, Angular, Node.js, Cloud and Opensource development.",
+    a: "Sahil Verma is a Technical Lead at Webmob Software Solutions, leading frontend architecture and delivery on enterprise-grade applications. He works as a Full Stack Engineer across React, Angular, Node.js, Cloud and Opensource development. Previously a Specialist Programmer at Infosys, including a multi-year on-site engagement delivering for UK clients in London.",
   },
   {
     q: "What technologies does Sahil work with?",
@@ -11,7 +11,7 @@ export const faqs: FAQ[] = [
   },
   {
     q: "What is Sahil's career background?",
-    a: "Specialist Programmer at Infosys (London, April 2021 – Present), Technical Lead at Webmob Software Solutions (Mohali, Jan 2019 – April 2021), and Software Developer at OATI on the core Deal Entry product team (Mohali, July 2016 – Dec 2018).",
+    a: "Technical Lead at Webmob Software Solutions (current role, rejoined 2024). Previously Specialist Programmer at Infosys (April 2021 — 2024), including a multi-year on-site engagement delivering for UK clients in London. First Webmob tenure as Technical Lead (Mohali, Jan 2019 – April 2021), and earlier Software Developer at OATI on the core Deal Entry product team (Mohali, July 2016 – Dec 2018).",
   },
   {
     q: "What is Sahil's education?",
@@ -23,7 +23,7 @@ export const faqs: FAQ[] = [
   },
   {
     q: "Where is Sahil based?",
-    a: "London, United Kingdom.",
+    a: "Chandigarh, India. He worked on-site in London for UK clients during his earlier Infosys engagement and is comfortable working across India and UK time zones.",
   },
   {
     q: "Does Sahil write a blog?",

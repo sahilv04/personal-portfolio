@@ -29,14 +29,14 @@ function latLonToVec3(lat: number, lon: number, radius = 1) {
 }
 
 const markers = [
+  { name: "Chandigarh", lat: 30.7333, lon: 76.7794, hot: true },
   { name: "London", lat: 51.5074, lon: -0.1278, hot: true },
-  { name: "Mohali", lat: 30.7046, lon: 76.7179, hot: true },
+  { name: "Mohali", lat: 30.7046, lon: 76.7179, hot: false },
   { name: "Patiala", lat: 30.3398, lon: 76.3869, hot: false },
   { name: "New York", lat: 40.7128, lon: -74.006, hot: false },
   { name: "Tokyo", lat: 35.6762, lon: 139.6503, hot: false },
   { name: "Singapore", lat: 1.3521, lon: 103.8198, hot: false },
   { name: "Sydney", lat: -33.8688, lon: 151.2093, hot: false },
-  { name: "São Paulo", lat: -23.5505, lon: -46.6333, hot: false },
 ];
 
 function Marker({ position, hot }: { position: Vector3; hot: boolean }) {

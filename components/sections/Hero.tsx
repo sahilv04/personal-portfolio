@@ -28,7 +28,7 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-ice/60" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-ice" />
           </span>
-          Specialist Programmer @ Infosys · London · Replies within 24h
+          Technical Lead @ Webmob · Chandigarh, India · Replies within 24h
         </motion.p>
 
         <h1 className="font-display text-[clamp(2.4rem,6vw,5.5rem)] leading-[1.05] tracking-tight">

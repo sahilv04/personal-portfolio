@@ -29,15 +29,16 @@ export default function AboutPage() {
                 I love engineering — the problem-solving, the craft, and the long arc of building products that real people rely on.
               </p>
               <p>
-                Today I work at <strong className="text-ink">Infosys</strong> as a Specialist Programmer, leading a team of around five engineers
-                building and maintaining enterprise-level, highly responsive applications. The work moves between architecture, hands-on coding,
-                code review, and the everyday rhythm of a healthy scrum cadence.
+                Today I'm back at <strong className="text-ink">Webmob Software Solutions</strong> as a Technical Lead, owning frontend architecture,
+                code review and delivery for enterprise-grade product engagements. The work moves between hands-on coding, sprint cadence,
+                client conversations and the everyday discipline that keeps a team shipping.
               </p>
               <p>
-                Before Infosys I was a <strong className="text-ink">Technical Lead at Webmob Software Solutions</strong> in Mohali, where I led a similar
-                team across enterprise apps in the financial domain — and where I learned how much engineering culture is shaped at the hiring table.
-                Earlier I worked at <strong className="text-ink">OATI</strong> on the core Deal Entry product team, shipping enterprise software for
-                clients in the power sector.
+                Before this I spent a few years at <strong className="text-ink">Infosys</strong> as a Specialist Programmer, leading a team of
+                around five engineers — including a multi-year on-site engagement in London delivering for UK clients. Same time zone,
+                same room when it mattered. Before that, my first stint at Webmob (2019–2021) was where I learned how much engineering
+                culture is shaped at the hiring table. And earlier, <strong className="text-ink">OATI</strong> — where I worked on the core
+                Deal Entry product team, shipping enterprise software for the power sector.
               </p>
               <p>
                 I'm an <strong className="text-ink">AWS Certified Cloud Practitioner</strong> and a <strong className="text-ink">Corda Certified Developer (R3)</strong>,
@@ -59,10 +60,10 @@ export default function AboutPage() {
                 </div>
                 <div className="flex justify-between gap-4">
                   <dt className="text-ink-muted">Company</dt>
-                  <dd className="text-right text-ink">Infosys</dd>
+                  <dd className="text-right text-ink">Webmob Software Solutions</dd>
                 </div>
                 <div className="flex justify-between gap-4">
-                  <dt className="text-ink-muted">Location</dt>
+                  <dt className="text-ink-muted">Based in</dt>
                   <dd className="text-right text-ink">{personal.location}</dd>
                 </div>
                 <div className="flex justify-between gap-4">

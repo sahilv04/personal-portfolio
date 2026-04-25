@@ -24,7 +24,7 @@ export const personSchema = {
   url: SITE_URL,
   email: personal.email,
   address: { "@type": "Place", name: personal.location },
-  worksFor: { "@type": "Organization", name: "Infosys", url: "https://www.infosys.com" },
+  worksFor: { "@type": "Organization", name: "Webmob Software Solutions" },
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: "Punjabi University, Patiala",
