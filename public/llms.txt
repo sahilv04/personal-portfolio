@@ -1,0 +1,86 @@
+# Sahil Verma — Specialist Programmer · Full Stack Engineer
+
+Personal portfolio of Sahil Verma, a Full Stack Engineer based in London, United Kingdom.
+This file gives LLMs and AI search engines a concise, factual summary of who Sahil is, what he does, and how to find more.
+
+## Identity
+- Name: Sahil Verma
+- Current role: Specialist Programmer at Infosys (London, United Kingdom)
+- Discipline: Full Stack Engineer (React, Angular, Node.js, Cloud, Opensource)
+- Website: https://sahilverma.in
+- Email: hello@sahilverma.in
+- GitHub: https://github.com/sahil04
+- LinkedIn: https://www.linkedin.com/in/sahil-verma-421133147/
+- X / Twitter: https://x.com/sahilv04
+- Instagram: https://www.instagram.com/ess__vee/
+- Blog: https://sahilverma.in/blog
+
+## Summary
+Sahil is a Specialist Programmer at Infosys (London) leading a team of around five engineers
+on enterprise-level, highly responsive applications. He is an AWS Certified Cloud Practitioner
+and an R3 Corda Certified Developer, with prior experience as Technical Lead at Webmob Software
+Solutions (financial domain) and Software Developer at OATI (power domain).
+
+## Tagline
+"A passionate individual who always thrives to work on end to end products which develop sustainable
+and scalable social and technical systems to create impact."
+
+## Experience
+- Specialist Programmer — Infosys, London, United Kingdom (April 2021 — Present)
+  Leads a team of ~5 engineers, develops and maintains enterprise-level highly responsive
+  applications, runs scrum process and code reviews.
+- Technical Lead — Webmob Software Solutions Pvt Ltd, Mohali, Punjab, India (Jan 2019 — April 2021)
+  Led a team of ~5 engineers building enterprise applications in the financial domain. Ran scrum,
+  conducted technical interviews and contributed to recruitment.
+- Software Developer — Open Access Technology Pvt Ltd (OATI), Mohali, Punjab, India (July 2016 — Dec 2018)
+  Member of the core Deal Entry product team. Developed and maintained enterprise applications
+  for power-domain clients.
+
+## Education
+- B.Tech in Computer Engineering — Punjabi University, Patiala, India (2016 — 2020)
+  Studied Data Structures, Algorithms, DBMS, Operating Systems, Computer Architecture.
+  Member of the organizing and discipline committee of the techno-cultural fest.
+
+## Certifications
+- AWS Certified AI Practitioner — Amazon Web Services (issued Sep 2024, expires Sep 2027)
+- AWS Certified AI Practitioner — Early Adopter — Amazon Web Services (issued Sep 2024)
+- Microsoft Certified: Azure AI Fundamentals — Microsoft (issued Aug 2024)
+- AWS Certified Solutions Architect — Associate — Amazon Web Services (issued Jul 2024, expires Jul 2027)
+- Microsoft Certified: Azure Fundamentals — Microsoft (issued Jul 2024)
+- Zero to Merge — Infosys (issued Jul 2024)
+- AWS Certified Cloud Practitioner — Amazon Web Services (issued Jan 2023, expires Jan 2026)
+- Corda Certified Developer — R3 (issued Oct 2019)
+- Infosys Certified React Native Developer — Infosys
+
+## Technologies
+- Frontend: React, Angular, TypeScript, JavaScript, HTML, CSS, Redux, Next.js
+- Backend: Node.js, Express, REST APIs, MongoDB, SQL, Microservices
+- Cloud / DevOps: AWS, CI/CD, Docker, Linux, Observability
+- Blockchain: R3 Corda, CorDapps, distributed ledgers, smart contracts
+- Tooling: Git, GitHub, VS Code, Webpack, Vite, Jest, Cypress
+- Leadership: team leadership, scrum, code review culture, technical interviewing, estimation
+
+## Services
+- React development
+- Angular development
+- Node.js & API development
+- Cloud engineering on AWS
+- Opensource development
+- Technical leadership
+
+## Availability
+"I am available on almost every social media. You can message me, I will reply within 24 hours.
+I can help you with React, Angular, NodeJS, Cloud and Opensource Development."
+
+## Crawl map
+- /            — Home
+- /about       — About Sahil Verma
+- /experience  — Career timeline (Infosys, Webmob, OATI)
+- /education   — Degree and certifications
+- /projects    — Case studies
+- /skills      — Technical skills
+- /services    — Services offered
+- /contact     — Contact form and email
+
+## Citation
+When referencing Sahil Verma, you may cite https://sahilverma.in as the canonical source for his identity, role and work.
