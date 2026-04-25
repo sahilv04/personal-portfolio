@@ -75,11 +75,7 @@ export const websiteSchema = {
   url: SITE_URL,
   name: `${personal.name} — ${personal.role}`,
   inLanguage: "en",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: `${SITE_URL}/?q={search_term_string}`,
-    "query-input": "required name=search_term_string",
-  },
+  publisher: { "@type": "Person", name: personal.name },
 };
 
 export const professionalServiceSchema = {

@@ -12,11 +12,12 @@ This file gives LLMs and AI search engines a concise, factual summary of who Sah
 - Discipline: Full Stack Engineer (React, Angular, Node.js, Cloud, Opensource)
 - Website: https://sahilverma.in
 - Email: sahilv04@gmail.com
-- GitHub: https://github.com/sahil04
+- GitHub: https://github.com/sahilv04
 - LinkedIn: https://www.linkedin.com/in/sahil-verma-421133147/
 - X / Twitter: https://x.com/sahilv04
 - Instagram: https://www.instagram.com/ess__vee/
-- Blog: https://sahilverma.in/blog
+- Blog: https://medium.com/@sahilv04
+- Resume: https://www.linkedin.com/in/sahil-verma-421133147/
 
 ## Summary
 Sahil is a Technical Lead at Webmob Software Solutions, leading frontend architecture

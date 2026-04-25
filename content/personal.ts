@@ -16,15 +16,15 @@ export const personal = {
   summary:
     "Sahil Verma is a Technical Lead at Webmob Software Solutions, leading engineers on enterprise-scale, highly responsive applications. Previously a Specialist Programmer at Infosys with a multi-year on-site engagement in London delivering for UK clients. AWS-certified across Cloud Practitioner, Solutions Architect Associate and AI Practitioner; Microsoft Azure Fundamentals (incl. AI); R3 Corda Certified Developer.",
   socials: {
-    github: "https://github.com/sahil04",
+    github: "https://github.com/sahilv04",
     linkedin: "https://www.linkedin.com/in/sahil-verma-421133147/",
     twitter: "https://x.com/sahilv04",
     email: "mailto:sahilv04@gmail.com",
     instagram: "https://www.instagram.com/ess__vee/",
-    blog: "https://sahilverma.in/blog",
+    blog: "https://medium.com/@sahilv04",
   },
-  resumeUrl: "https://sahilverma.in/resume",
-  blogUrl: "https://sahilverma.in/blog",
+  resumeUrl: "https://www.linkedin.com/in/sahil-verma-421133147/",
+  blogUrl: "https://medium.com/@sahilv04",
   stats: [
     { label: "Years shipping production software", value: "9+" },
     { label: "Engineers led across teams", value: "10+" },
