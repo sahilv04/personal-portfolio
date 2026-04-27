@@ -5,7 +5,7 @@
 :root {
   color-scheme: dark;
   --font-sans: "Inter", "Helvetica Neue", system-ui, sans-serif;
-  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-display: "MedievalSharp", "Times New Roman", serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 

@@ -1,5 +1,13 @@
 import type { Metadata, Viewport } from "next";
+import { MedievalSharp } from "next/font/google";
 import "./globals.css";
+
+const medievalSharp = MedievalSharp({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-display",
+});
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CursorTrail from "@/components/ui/CursorTrail";
@@ -77,7 +85,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${medievalSharp.variable}`}>
       <body className="min-h-screen bg-bg text-ink antialiased">
         <JsonLd data={personSchema} />
         <JsonLd data={websiteSchema} />
