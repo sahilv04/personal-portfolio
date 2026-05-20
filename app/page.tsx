@@ -26,7 +26,7 @@ export default function HomePage() {
       <Section
         eyebrow="Skills"
         title="A full stack engineer's toolkit — frontend, backend, cloud."
-        description="React and Angular, Node.js services, AWS cloud delivery, R3 Corda for distributed-ledger work."
+        description="React and Angular, Node.js services, AWS cloud delivery, and full-stack engineering for fintech."
       >
         <SkillsGrid />
       </Section>

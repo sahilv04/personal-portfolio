@@ -67,8 +67,6 @@ export const personSchema = {
     "Fintech",
     "Financial technology",
     "Blockchain",
-    "R3 Corda",
-    "Distributed ledgers",
     "React",
     "Angular",
     "TypeScript",
@@ -144,6 +142,36 @@ export function pageSchema({ type = "WebPage", name, description, path }: PageSc
     isPartOf: { "@type": "WebSite", url: SITE_URL, name: `${personal.name} — ${personal.role}` },
     about: { "@type": "Person", name: personal.name, url: SITE_URL },
     dateModified: BUILD_DATE,
+  };
+}
+
+type ArticleSchemaArgs = {
+  title: string;
+  description: string;
+  slug: string;
+  date: string;
+  modified?: string;
+  tags?: string[];
+  image?: string;
+};
+
+export function articleSchema({ title, description, slug, date, modified, tags, image }: ArticleSchemaArgs) {
+  const url = new URL(`/articles/${slug}`, SITE_URL).toString();
+  const imageUrl = new URL(image ?? "/opengraph-image", SITE_URL).toString();
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    datePublished: date,
+    dateModified: modified ?? date,
+    author: { "@type": "Person", name: personal.name, url: SITE_URL },
+    publisher: { "@type": "Person", name: personal.name, url: SITE_URL },
+    image: imageUrl,
+    inLanguage: "en",
+    keywords: tags && tags.length > 0 ? tags.join(", ") : undefined,
   };
 }
 

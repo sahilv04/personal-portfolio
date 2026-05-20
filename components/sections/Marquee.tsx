@@ -13,7 +13,6 @@ const items = [
   "REST APIs",
   "AWS",
   "Cloud",
-  "R3 Corda",
   "Docker",
   "Webpack",
   "Vite",

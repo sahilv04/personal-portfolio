@@ -15,9 +15,10 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { JsonLd, personSchema, websiteSchema, professionalServiceSchema } from "@/lib/jsonld";
 import { SITE_URL, personal } from "@/content/personal";
+import { defaultKeywords } from "@/lib/seo";
 
 const SEO_TITLE = `${personal.name} — Fintech Full Stack Engineer · Technical Lead`;
-const SEO_DESCRIPTION = `${personal.name} — Fintech-focused Full Stack Engineer & Technical Lead. R3 Corda Certified, AWS Certified (SAA, AI, CP). Leading teams at Webmob across React, Angular, Node.js & Cloud; previously Specialist Programmer at Infosys delivering for UK clients.`;
+const SEO_DESCRIPTION = `${personal.name} — Fintech-focused Full Stack Engineer & Technical Lead. AWS Certified (SAA, AI, CP). Leading teams at Webmob across React, Angular, Node.js & Cloud; previously Specialist Programmer at Infosys delivering for UK clients.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -31,25 +32,10 @@ export const metadata: Metadata = {
   creator: personal.name,
   publisher: personal.name,
   keywords: [
-    "Sahil Verma",
+    ...defaultKeywords,
     "Sahil Verma Fintech",
     "Sahil Verma Technical Lead",
-    "Sahil Verma R3 Corda",
-    "Fintech Engineer",
-    "Fintech Full Stack Engineer",
-    "Blockchain Engineer",
-    "Specialist Programmer",
-    "Full Stack Engineer",
-    "React Developer",
-    "Angular Developer",
-    "Node.js Developer",
-    "AWS Certified Cloud Practitioner",
-    "Corda Certified Developer",
-    "R3 Corda",
-    "Infosys",
     "Webmob Software Solutions",
-    "Technical Lead",
-    "Opensource",
   ],
   alternates: { canonical: SITE_URL },
   openGraph: {

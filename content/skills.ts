@@ -21,11 +21,6 @@ export const skillGroups: SkillGroup[] = [
     items: ["AWS", "Solutions Architect", "AI Practitioner", "Azure", "CI/CD", "Docker", "Linux", "Observability"],
   },
   {
-    title: "Blockchain",
-    blurb: "Distributed-ledger work — Corda Certified Developer (R3).",
-    items: ["Corda", "R3", "CorDapps", "Distributed ledgers", "Smart contracts"],
-  },
-  {
     title: "Tooling",
     blurb: "Build, test, deploy — boring infrastructure done right.",
     items: ["Git", "GitHub", "VS Code", "Webpack", "Vite", "Jest", "Cypress"],

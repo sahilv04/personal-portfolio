@@ -84,13 +84,6 @@ export const certifications: Certification[] = [
     credentialId: "a6c951ff-f802-4122-8d53-c620c83288cc",
   },
   {
-    name: "Corda Certified Developer",
-    issuer: "R3",
-    description: "Developer certification for the Corda distributed ledger platform — CorDapp design and implementation.",
-    issued: "Oct 2019",
-    credentialId: "7cc39002-3bc1-4f1c-9b21-b111aef6981e",
-  },
-  {
     name: "Infosys Certified React Native Developer",
     issuer: "Infosys",
     description: "Internal Infosys certification for cross-platform mobile development with React Native.",

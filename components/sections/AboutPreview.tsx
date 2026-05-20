@@ -17,8 +17,8 @@ export default function AboutPreview() {
             d: "React and Angular on the frontend, Node.js services on the backend, REST and SQL/NoSQL data layers — production scale.",
           },
           {
-            t: "Cloud & Distributed Systems",
-            d: "AWS Certified Cloud Practitioner and R3 Corda Certified Developer — comfortable with cloud delivery and distributed-ledger work.",
+            t: "Cloud Engineering",
+            d: "AWS Certified across Cloud Practitioner, Solutions Architect Associate and AI Practitioner — comfortable with cloud-native delivery and AI integration.",
           },
           {
             t: "Team Leadership",

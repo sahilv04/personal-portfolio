@@ -8,7 +8,7 @@ import CTA from "@/components/sections/CTA";
 export const metadata = buildMetadata({
   title: "Education",
   description:
-    "Education and certifications — B.Tech in Computer Engineering from Punjabi University, Patiala, plus AWS Certified Cloud Practitioner and Corda Certified Developer (R3).",
+    "Education and certifications — B.Tech in Computer Engineering from Punjabi University, Patiala, plus AWS Certified Cloud Practitioner, Solutions Architect Associate and AI Practitioner, and Microsoft Azure Fundamentals.",
   path: "/education",
 });
 
@@ -16,7 +16,7 @@ export default function EducationPage() {
   return (
     <>
       <JsonLd data={breadcrumb([{ name: "Home", href: "/" }, { name: "Education", href: "/education" }])} />
-      <JsonLd data={pageSchema({ type: "CollectionPage", name: "Education and certifications of Sahil Verma", description: "B.Tech in Computer Engineering, AWS, Azure and R3 Corda certifications.", path: "/education" })} />
+      <JsonLd data={pageSchema({ type: "CollectionPage", name: "Education and certifications of Sahil Verma", description: "B.Tech in Computer Engineering, AWS and Azure certifications.", path: "/education" })} />
       <Section
         eyebrow="Education"
         title="Basic qualification and certifications."
@@ -57,7 +57,7 @@ export default function EducationPage() {
       <Section
         eyebrow="Certifications"
         title="Professional certifications."
-        description="AWS (Cloud Practitioner, Solutions Architect Associate, AI Practitioner), Microsoft Azure (Fundamentals, AI Fundamentals), R3 Corda and Infosys credentials."
+        description="AWS (Cloud Practitioner, Solutions Architect Associate, AI Practitioner), Microsoft Azure (Fundamentals, AI Fundamentals) and Infosys credentials."
       >
         <div className="grid gap-6 md:grid-cols-2">
           {certifications.map((c, i) => (

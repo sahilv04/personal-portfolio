@@ -43,7 +43,7 @@ export default function AboutPage() {
                 Deal Entry product team, shipping enterprise software for the power sector.
               </p>
               <p>
-                I'm an <strong className="text-ink">AWS Certified Cloud Practitioner</strong> and a <strong className="text-ink">Corda Certified Developer (R3)</strong>,
+                I'm an <strong className="text-ink">AWS Certified Cloud Practitioner</strong>, <strong className="text-ink">Solutions Architect Associate</strong> and <strong className="text-ink">AI Practitioner</strong>,
                 and I lean into both ends of the stack: React and Angular on the frontend, Node.js on the backend, plus cloud and opensource work.
               </p>
               <p>
@@ -92,7 +92,6 @@ export default function AboutPage() {
                 <li>React & Angular frontend development</li>
                 <li>Node.js services & REST APIs</li>
                 <li>Cloud engineering on AWS</li>
-                <li>Corda / R3 distributed ledger work</li>
                 <li>Opensource development</li>
                 <li>Technical leadership & scrum delivery</li>
               </ul>
@@ -100,7 +99,8 @@ export default function AboutPage() {
               <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">Certifications</p>
               <ul className="mt-3 grid gap-2 text-sm text-ink-dim">
                 <li>AWS Certified Cloud Practitioner</li>
-                <li>Corda Certified Developer (R3)</li>
+                <li>AWS Solutions Architect — Associate</li>
+                <li>AWS Certified AI Practitioner</li>
               </ul>
             </aside>
           </Reveal>

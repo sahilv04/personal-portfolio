@@ -3,7 +3,7 @@ export type FAQ = { q: string; a: string };
 export const servicesFaqs: FAQ[] = [
   {
     q: "What services does Sahil offer?",
-    a: "End-to-end product engineering: React and Angular frontend development, Node.js and REST API backends, AWS cloud engineering, R3 Corda / distributed-ledger work, opensource contributions, and technical leadership for ~5-engineer scrum teams.",
+    a: "End-to-end product engineering: React and Angular frontend development, Node.js and REST API backends, AWS cloud engineering, opensource contributions, and technical leadership for ~5-engineer scrum teams.",
   },
   {
     q: "Does Sahil work with startups or only enterprise teams?",
@@ -41,7 +41,7 @@ export const faqs: FAQ[] = [
   },
   {
     q: "What technologies does Sahil work with?",
-    a: "React, Angular, TypeScript, JavaScript, Node.js, Express, REST APIs, MongoDB, SQL, AWS (Cloud Practitioner certified), Corda / R3 (Certified Developer), Git, Docker, Webpack, Jest and Cypress.",
+    a: "React, Angular, TypeScript, JavaScript, Node.js, Express, REST APIs, MongoDB, SQL, AWS (Cloud Practitioner, Solutions Architect Associate and AI Practitioner), Git, Docker, Webpack, Jest and Cypress.",
   },
   {
     q: "What is Sahil's career background?",
@@ -53,7 +53,7 @@ export const faqs: FAQ[] = [
   },
   {
     q: "Which certifications does Sahil hold?",
-    a: "AWS Certified Cloud Practitioner, AWS Certified Solutions Architect — Associate and AWS Certified AI Practitioner (including Early Adopter); Microsoft Certified: Azure Fundamentals and Azure AI Fundamentals; Corda Certified Developer (R3); plus Infosys Certified React Native Developer and Infosys Zero to Merge.",
+    a: "AWS Certified Cloud Practitioner, AWS Certified Solutions Architect — Associate and AWS Certified AI Practitioner (including Early Adopter); Microsoft Certified: Azure Fundamentals and Azure AI Fundamentals; plus Infosys Certified React Native Developer and Infosys Zero to Merge.",
   },
   {
     q: "Where is Sahil based?",

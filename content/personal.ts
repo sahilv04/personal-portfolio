@@ -14,7 +14,7 @@ export const personal = {
   intro:
     "I'm a passionate Full Stack Engineer based in Chandigarh, India. I lead small teams, design and ship enterprise-grade applications, and care deeply about sustainable, scalable systems that actually create impact for the people who use them.",
   summary:
-    "Sahil Verma is a Technical Lead at Webmob Software Solutions, leading engineers on enterprise-scale, highly responsive applications. Previously a Specialist Programmer at Infosys with a multi-year on-site engagement in London delivering for UK clients. AWS-certified across Cloud Practitioner, Solutions Architect Associate and AI Practitioner; Microsoft Azure Fundamentals (incl. AI); R3 Corda Certified Developer.",
+    "Sahil Verma is a Technical Lead at Webmob Software Solutions, leading engineers on enterprise-scale, highly responsive applications. Previously a Specialist Programmer at Infosys with a multi-year on-site engagement in London delivering for UK clients. AWS-certified across Cloud Practitioner, Solutions Architect Associate and AI Practitioner; Microsoft Azure Fundamentals (incl. AI).",
   metaDescription:
     "Sahil Verma — Technical Lead at Webmob Software Solutions. Full stack engineer (React, Angular, Node.js, AWS). Previously Infosys, on-site UK delivery.",
   socials: {
@@ -31,7 +31,7 @@ export const personal = {
     { label: "Years shipping production software", value: "9+" },
     { label: "Engineers led across teams", value: "10+" },
     { label: "Domains: finance, power, enterprise", value: "3+" },
-    { label: "Certifications across AWS, Azure, R3 & Infosys", value: "9" },
+    { label: "Certifications across AWS, Azure & Infosys", value: "8" },
   ],
 };
 
