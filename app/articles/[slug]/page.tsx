@@ -23,18 +23,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     path: `/articles/${article.slug}`,
     keywords: article.tags,
   });
-  const ogImage = new URL(article.ogImage ?? "/opengraph-image", SITE_URL).toString();
-  return {
-    ...base,
-    openGraph: {
-      ...(base.openGraph ?? {}),
-      type: "article",
-      publishedTime: article.date,
-      modifiedTime: article.updated ?? article.date,
-      tags: article.tags,
-      images: [ogImage],
-    },
+  const openGraph: NonNullable<Metadata["openGraph"]> = {
+    ...(base.openGraph ?? {}),
+    type: "article",
+    publishedTime: article.date,
+    modifiedTime: article.updated ?? article.date,
+    tags: article.tags,
   };
+  if (article.ogImage) {
+    openGraph.images = [new URL(article.ogImage, SITE_URL).toString()];
+  }
+  return { ...base, openGraph };
 }
 
 function formatDate(iso: string) {
