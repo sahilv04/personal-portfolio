@@ -14,6 +14,66 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "trade-confirmation-system-ciao",
+    name: "Trade Confirmation System (CIAO)",
+    domain: "Energy Trading · Fintech",
+    tagline: "Trade confirmation management system for British Petroleum — send, receive and process inbound documents and contracts.",
+    summary:
+      "At Infosys, built the UI from scratch for CIAO, a trade confirmation management system enabling British Petroleum to send, receive and process inbound documents and contracts. Owned the React frontend end to end, maintained 80% unit test coverage, and led a 3-member team. Deployed via Jenkins and ROSA.",
+    role: "Tech Lead — leading a team of 3",
+    stack: ["ReactJS", "TypeScript", "SASS", "Jest", "Kendo UI", "Jenkins", "ROSA"],
+    highlights: [
+      "Developed the UI part of the application from scratch",
+      "Maintained 80% unit test coverage",
+      "Deployed using Jenkins and ROSA",
+      "Led a team of 3 members",
+    ],
+    outcomes: [
+      "Enabled BP to send, receive and process inbound contracts",
+      "High-confidence releases backed by strong test coverage",
+    ],
+    year: "Infosys · 2021 — Present",
+    accent: "cyan",
+  },
+  {
+    slug: "ey-via",
+    name: "EY VIA",
+    domain: "Audit · Risk · Enterprise",
+    tagline: "Virtual internal auditing platform for Ernst & Young.",
+    summary:
+      "Developed a virtual internal auditing platform for Ernst & Young, handling auditing, risk management and report generation based on various factors and calculations.",
+    role: "Engineer · Infosys",
+    stack: ["React JS", "JavaScript", "NodeJS", "PostgreSQL", "Jest", "SASS"],
+    highlights: [
+      "Built auditing and risk-management workflows",
+      "Implemented report generation based on various factors and calculations",
+    ],
+    outcomes: [
+      "Streamlined internal auditing for an enterprise client",
+    ],
+    year: "Infosys · 2021 — Present",
+    accent: "magenta",
+  },
+  {
+    slug: "sustainability-platform",
+    name: "Sustainability Platform",
+    domain: "Media · Sustainability",
+    tagline: "The Economist Group's global initiative to advance discourse on sustainability among world leaders and businesses.",
+    summary:
+      "As a Digital Innovation Partner, Infosys powers The Economist Group's latest global initiative to advance discourse on sustainability among world leaders and businesses.",
+    role: "Engineer · Infosys (Digital Innovation Partner)",
+    stack: ["ReactJS", "NodeJS", "Next JS", "Express", "TypeScript", "Unit testing"],
+    highlights: [
+      "Built on ReactJS, NodeJS, Next JS and Express",
+      "TypeScript across the stack with unit testing",
+    ],
+    outcomes: [
+      "Public platform advancing global sustainability discourse",
+    ],
+    year: "Infosys · 2021 — Present",
+    accent: "amber",
+  },
+  {
     slug: "enterprise-responsive-platform",
     name: "Enterprise Responsive Platform",
     domain: "Enterprise · Full Stack",
