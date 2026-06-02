@@ -2,20 +2,20 @@ export type FAQ = { q: string; a: string };
 
 export const servicesFaqs: FAQ[] = [
   {
-    q: "What services does Sahil offer?",
+    q: "What does Sahil work on?",
     a: "End-to-end product engineering: React and Angular frontend development, Node.js and REST API backends, AWS cloud engineering, opensource contributions, and technical leadership for ~5-engineer scrum teams.",
   },
   {
-    q: "Does Sahil work with startups or only enterprise teams?",
-    a: "Both. The day-job experience is enterprise-grade (Infosys, Webmob, OATI), but the engineering style — clear scope, tight iterations, code review culture — works equally well for startups looking for a senior pair of hands.",
+    q: "Startups or enterprise teams?",
+    a: "Both. The experience is enterprise-grade (Infosys, Webmob, OATI), but the engineering style — clear scope, tight iterations, code review culture — works equally well for startups that need a senior pair of hands.",
   },
   {
-    q: "Can Sahil lead a team or only contribute as an IC?",
+    q: "Does Sahil lead teams or contribute as an IC?",
     a: "Either. Currently leading frontend architecture and delivery as Technical Lead at Webmob; previously led ~5-engineer teams at Infosys (London) and Webmob. Comfortable owning estimation, sprint planning, code review and hiring.",
   },
   {
-    q: "What's the typical engagement model?",
-    a: "Either retained delivery against a clear scope or advisory + hands-on tech-lead support. Reach out via the contact form or email and we'll scope it together.",
+    q: "What kind of role is Sahil looking for?",
+    a: "Senior full-stack or technical-lead roles where he can own delivery end to end — architecture, hands-on engineering and team leadership. Reach out via the contact form or email to talk it through.",
   },
 ];
 
@@ -29,8 +29,8 @@ export const contactFaqs: FAQ[] = [
     a: "India Standard Time (IST), based in Chandigarh. Comfortable with UK time zones from prior on-site delivery in London for Infosys.",
   },
   {
-    q: "What kind of projects is Sahil open to?",
-    a: "React, Angular, Node.js, AWS cloud, opensource and technical leadership engagements. Happy to discuss enterprise platforms, fintech, product engineering and tech-lead support.",
+    q: "What kind of roles is Sahil open to?",
+    a: "Senior full-stack and technical-lead roles across React, Angular, Node.js, AWS cloud and opensource. Happy to discuss enterprise platforms, fintech and product engineering.",
   },
 ];
 

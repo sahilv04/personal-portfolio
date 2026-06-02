@@ -9,7 +9,7 @@ import { personal } from "@/content/personal";
 export const metadata = buildMetadata({
   title: "Contact",
   description:
-    "Get in touch with Sahil Verma — Technical Lead and Full Stack Engineer. Happy to chat about React, Angular, Node.js, Cloud and Opensource development.",
+    "Get in touch with Sahil Verma — Technical Lead and Full Stack Engineer. Happy to talk React, Angular, Node.js, Cloud and Opensource engineering.",
   path: "/contact",
 });
 
@@ -21,8 +21,8 @@ export default function ContactPage() {
       <JsonLd data={faqPageSchema(contactFaqs)} />
       <Section
         eyebrow="Contact"
-        title="Tell me what you're building."
-        description="I'm available on almost every social media — message me and I'll reply within 24 hours. Happy to help with React, Angular, Node.js, Cloud and Opensource development."
+        title="Let's connect."
+        description="Open to connecting — reach out and I'll reply within 24 hours. Always happy to talk React, Angular, Node.js, Cloud and Opensource engineering."
       >
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr]">
           <div className="rounded-3xl border border-white/8 bg-white/[0.02] p-6 md:p-8">
@@ -51,11 +51,11 @@ export default function ContactPage() {
               </ul>
             </div>
             <div className="glass rounded-2xl p-6">
-              <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">Working with me</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">What I work on</p>
               <ul className="mt-3 grid gap-2 text-sm text-ink-dim">
                 <li>· React, Angular and Node.js development</li>
-                <li>· Cloud (AWS) and Opensource projects</li>
-                <li>· Replies within 24 hours, on almost every social platform</li>
+                <li>· Cloud (AWS) and Opensource engineering</li>
+                <li>· Technical leadership for ~5-engineer teams</li>
               </ul>
             </div>
           </aside>

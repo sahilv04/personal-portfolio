@@ -7,26 +7,26 @@ import { servicesFaqs } from "@/content/faq";
 import CTA from "@/components/sections/CTA";
 
 export const metadata = buildMetadata({
-  title: "Services",
+  title: "What I Do",
   description:
-    "Services from Sahil Verma — React and Angular development, Node.js and APIs, AWS cloud engineering, opensource development and technical leadership.",
+    "What Sahil Verma does — React and Angular development, Node.js and APIs, AWS cloud engineering, opensource development and technical leadership.",
   path: "/services",
 });
 
 export default function ServicesPage() {
   return (
     <>
-      <JsonLd data={breadcrumb([{ name: "Home", href: "/" }, { name: "Services", href: "/services" }])} />
-      <JsonLd data={pageSchema({ type: "CollectionPage", name: "Services by Sahil Verma", description: "React, Angular, Node.js, AWS cloud engineering, opensource and technical leadership.", path: "/services" })} />
+      <JsonLd data={breadcrumb([{ name: "Home", href: "/" }, { name: "What I Do", href: "/services" }])} />
+      <JsonLd data={pageSchema({ type: "CollectionPage", name: "What Sahil Verma does", description: "React, Angular, Node.js, AWS cloud engineering, opensource and technical leadership.", path: "/services" })} />
       <JsonLd data={faqPageSchema(servicesFaqs)} />
       <Section
-        eyebrow="Services"
+        eyebrow="What I do"
         title="What I do for product teams."
         description="React, Angular, Node.js, Cloud (AWS) and Opensource development — plus tech-lead craft for ~5-engineer teams under scrum."
       >
         <ServicesGrid />
       </Section>
-      <Section eyebrow="FAQ" title="Common questions about working together.">
+      <Section eyebrow="FAQ" title="Common questions.">
         <FAQ items={servicesFaqs} />
       </Section>
       <CTA />

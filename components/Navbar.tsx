@@ -13,7 +13,7 @@ const links = [
   { href: "/education", label: "Education" },
   { href: "/projects", label: "Projects" },
   { href: "/skills", label: "Skills" },
-  { href: "/services", label: "Services" },
+  { href: "/services", label: "What I Do" },
   { href: "/articles", label: "Articles" },
   { href: "/contact", label: "Contact" },
 ];

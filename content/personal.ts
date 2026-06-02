@@ -8,7 +8,7 @@ export const personal = {
   location: "Chandigarh, India",
   email: "sahilv04@gmail.com",
   availability:
-    "Available on almost every social media — replies within 24 hours. Happy to help with React, Angular, NodeJS, Cloud and Opensource development.",
+    "Open to connecting — reach out and I'll reply within 24 hours. Always happy to talk React, Angular, Node.js, Cloud and Opensource engineering.",
   headline:
     "I build end-to-end products and lead the engineers who ship them — React, Angular, Node.js, Cloud and Opensource at enterprise scale.",
   intro:
