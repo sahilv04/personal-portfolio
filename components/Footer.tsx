@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { personal } from "@/content/personal";
+import TrackedLink from "@/components/analytics/TrackedLink";
 
 export default function Footer() {
   return (
@@ -27,16 +28,16 @@ export default function Footer() {
             <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">Elsewhere</p>
             <ul className="mt-3 grid gap-2 text-sm">
               <li>
-                <a className="text-ink-dim hover:text-ink" href={personal.socials.github} target="_blank" rel="noreferrer noopener">GitHub</a>
+                <TrackedLink event="social_click" eventParams={{ network: "github", location: "footer" }} className="text-ink-dim hover:text-ink" href={personal.socials.github} target="_blank" rel="noreferrer noopener">GitHub</TrackedLink>
               </li>
               <li>
-                <a className="text-ink-dim hover:text-ink" href={personal.socials.linkedin} target="_blank" rel="noreferrer noopener">LinkedIn</a>
+                <TrackedLink event="social_click" eventParams={{ network: "linkedin", location: "footer" }} className="text-ink-dim hover:text-ink" href={personal.socials.linkedin} target="_blank" rel="noreferrer noopener">LinkedIn</TrackedLink>
               </li>
               <li>
-                <a className="text-ink-dim hover:text-ink" href={personal.socials.twitter} target="_blank" rel="noreferrer noopener">X / Twitter</a>
+                <TrackedLink event="social_click" eventParams={{ network: "twitter", location: "footer" }} className="text-ink-dim hover:text-ink" href={personal.socials.twitter} target="_blank" rel="noreferrer noopener">X / Twitter</TrackedLink>
               </li>
               <li>
-                <a className="text-ink-dim hover:text-ink" href={personal.socials.email}>{personal.email}</a>
+                <TrackedLink event="contact_click" eventParams={{ method: "email", location: "footer" }} className="text-ink-dim hover:text-ink" href={personal.socials.email}>{personal.email}</TrackedLink>
               </li>
             </ul>
           </div>

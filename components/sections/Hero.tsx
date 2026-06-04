@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import HeroSceneLoader from "@/components/three/HeroSceneLoader";
 import Button from "@/components/ui/Button";
 import { personal } from "@/content/personal";
+import { track } from "@/lib/analytics";
 
 const headline = personal.headline;
 
@@ -67,6 +68,7 @@ export default function Hero() {
             href={personal.socials.github}
             target="_blank"
             rel="noreferrer noopener"
+            onClick={() => track("social_click", { network: "github", location: "hero" })}
             className="ml-2 text-sm text-ink-muted underline-offset-4 hover:text-ink hover:underline"
           >
             GitHub

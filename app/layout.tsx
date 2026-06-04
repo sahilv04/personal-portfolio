@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { Suspense } from "react";
 import { MedievalSharp } from "next/font/google";
 import "./globals.css";
-
-const GA_MEASUREMENT_ID = "G-E957GSMJYY";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics";
+import AnalyticsTracker from "@/components/analytics/AnalyticsTracker";
 
 const medievalSharp = MedievalSharp({
   subsets: ["latin"],
@@ -94,7 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
+            gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });
           `}
         </Script>
       </head>
@@ -108,6 +109,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
+        <Suspense fallback={null}>
+          <AnalyticsTracker />
+        </Suspense>
         <CursorTrail />
         <Navbar />
         <main id="main">{children}</main>

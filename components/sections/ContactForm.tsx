@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { personal } from "@/content/personal";
+import { track } from "@/lib/analytics";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sent">("idle");
@@ -16,6 +17,7 @@ export default function ContactForm() {
     const message = String(data.get("message") || "");
     const subject = encodeURIComponent(`Project enquiry — ${name}`);
     const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    track("generate_lead", { method: "contact_form" });
     window.location.href = `mailto:${personal.email}?subject=${subject}&body=${body}`;
     setStatus("sent");
   }
@@ -65,6 +67,7 @@ export default function ContactForm() {
         </motion.button>
         <a
           href={personal.socials.email}
+          onClick={() => track("contact_click", { method: "email", location: "contact_form" })}
           className="rounded-full border border-white/15 bg-transparent px-5 py-3 text-sm text-ink hover:bg-white/5"
         >
           Or just write to {personal.email}
