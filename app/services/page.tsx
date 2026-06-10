@@ -20,13 +20,16 @@ export default function ServicesPage() {
       <JsonLd data={pageSchema({ type: "CollectionPage", name: "What Sahil Verma does", description: "React, Angular, Node.js, AWS cloud engineering, opensource and technical leadership.", path: "/services" })} />
       <JsonLd data={faqPageSchema(servicesFaqs)} />
       <Section
+        index="08"
+        relief="octa"
+        titleAs="h1"
         eyebrow="What I do"
         title="What I do for product teams."
         description="React, Angular, Node.js, Cloud (AWS) and Opensource development — plus tech-lead craft for ~5-engineer teams under scrum."
       >
         <ServicesGrid />
       </Section>
-      <Section eyebrow="FAQ" title="Common questions.">
+      <Section index="09" eyebrow="FAQ" title="Common questions.">
         <FAQ items={servicesFaqs} />
       </Section>
       <CTA />

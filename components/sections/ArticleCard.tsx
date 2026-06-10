@@ -1,62 +1,37 @@
-"use client";
-
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
 import type { Article } from "@/lib/articles";
+import Reveal from "@/components/ui/Reveal";
 
 function formatDate(iso: string) {
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return iso;
-  return d.toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" });
+  return d.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" });
 }
 
 export default function ArticleCard({ article, index }: { article: Article; index: number }) {
-  const reduce = useReducedMotion();
   return (
-    <motion.article
-      initial={reduce ? false : { opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative overflow-hidden rounded-3xl border border-white/8 bg-white/[0.02] p-6 transition hover:border-white/20 md:p-8"
-    >
-      <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-ink-muted">
-        <span>{formatDate(article.date)}</span>
-        <span className="h-1 w-1 rounded-full bg-white/20" />
-        <span>{article.readingTimeMinutes} min read</span>
-      </div>
-
-      <h3 className="mt-4 font-display text-2xl text-ink md:text-3xl">
-        <Link href={`/articles/${article.slug}`} className="hover:underline underline-offset-4">
-          {article.title}
-        </Link>
-      </h3>
-
-      <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-dim md:text-[15px]">
-        {article.description}
-      </p>
-
-      {article.tags.length > 0 && (
-        <div className="mt-6 flex flex-wrap gap-2">
-          {article.tags.map((t) => (
-            <span
-              key={t}
-              className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-ink-dim"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-      )}
-
+    <Reveal delay={Math.min(index, 3) * 0.06} className="h-full">
       <Link
         href={`/articles/${article.slug}`}
-        className="mt-7 inline-flex items-center gap-2 text-sm text-ink underline-offset-4 hover:underline"
-        aria-label={`Read ${article.title}`}
+        className="group block h-full border border-ink/25 bg-paper-card p-7 shadow-offset-sm transition-transform duration-200 hover:-translate-y-1 md:p-8"
       >
-        Read article
-        <span aria-hidden>→</span>
+        <div className="flex items-baseline justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-ink-faint">
+          <time dateTime={article.date}>{formatDate(article.date)}</time>
+          <span>{article.readingTimeMinutes} min read</span>
+        </div>
+        <h3 className="wonk mt-4 font-display text-2xl font-semibold leading-tight text-ink transition-colors group-hover:text-vermilion md:text-3xl">
+          {article.title}
+        </h3>
+        <p className="mt-3 italic leading-relaxed text-ink-soft">{article.description}</p>
+        {article.tags.length > 0 && (
+          <p className="dotted-rule mt-5 pt-4 font-mono text-[11px] tracking-wide text-ink-faint">
+            filed under: {article.tags.join(" · ")}
+          </p>
+        )}
+        <p className="mt-4 font-mono text-xs uppercase tracking-[0.2em] text-vermilion">
+          Read the entry →
+        </p>
       </Link>
-    </motion.article>
+    </Reveal>
   );
 }

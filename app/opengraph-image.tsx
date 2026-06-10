@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 import { personal } from "@/content/personal";
 
-export const runtime = "edge";
 export const alt = `${personal.name} — ${personal.role}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -15,78 +14,80 @@ export default async function OGImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
-          padding: "80px",
-          background:
-            "radial-gradient(ellipse at top left, #1a1a3a 0%, #060611 60%)",
-          color: "#ffffff",
-          fontFamily: "system-ui, -apple-system, sans-serif",
+          background: "#F3EDE0",
+          color: "#211D14",
+          fontFamily: "Georgia, 'Times New Roman', serif",
+          padding: "56px 72px",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          <div
-            style={{
-              width: "48px",
-              height: "48px",
-              borderRadius: "12px",
-              background: "linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%)",
-            }}
-          />
-          <span style={{ fontSize: "28px", opacity: 0.85, letterSpacing: "-0.02em" }}>
-            sahilverma.in
-          </span>
+        {/* Masthead rule */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            borderBottom: "4px solid #211D14",
+            paddingBottom: "20px",
+            fontSize: "22px",
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            color: "#57503F",
+          }}
+        >
+          <span>Est. 2016 — Chandigarh, IN</span>
+          <span>sahilverma.in</span>
+          <span>Vol. IX</span>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          <div
-            style={{
-              fontSize: "84px",
-              fontWeight: 700,
-              lineHeight: 1.05,
-              letterSpacing: "-0.04em",
-            }}
-          >
-            {personal.name}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            flex: 1,
+            gap: "22px",
+          }}
+        >
+          <div style={{ fontSize: "104px", fontWeight: 700, lineHeight: 1, letterSpacing: "-0.03em", display: "flex" }}>
+            <span>{personal.name}</span>
+            <span style={{ color: "#C8401F" }}>.</span>
           </div>
-          <div
-            style={{
-              fontSize: "40px",
-              fontWeight: 400,
-              opacity: 0.85,
-              letterSpacing: "-0.02em",
-            }}
-          >
+          <div style={{ fontSize: "38px", fontStyle: "italic", color: "#57503F", display: "flex" }}>
             {personal.role}
           </div>
           <div
             style={{
-              fontSize: "26px",
-              opacity: 0.6,
-              maxWidth: "900px",
-              lineHeight: 1.4,
-              marginTop: "12px",
+              display: "flex",
+              gap: "14px",
+              fontSize: "22px",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "#211D14",
             }}
           >
-            React · Angular · Node.js · Cloud · Opensource — enterprise scale.
+            <span style={{ border: "2px solid #211D14", padding: "8px 18px" }}>React</span>
+            <span style={{ border: "2px solid #211D14", padding: "8px 18px" }}>Angular</span>
+            <span style={{ border: "2px solid #211D14", padding: "8px 18px" }}>Node.js</span>
+            <span style={{ border: "2px solid #C8401F", color: "#C8401F", padding: "8px 18px" }}>AWS ×3 Certified</span>
           </div>
         </div>
 
         <div
           style={{
             display: "flex",
-            gap: "24px",
+            justifyContent: "space-between",
+            borderTop: "2px solid #211D14",
+            paddingTop: "18px",
             fontSize: "22px",
-            opacity: 0.5,
+            color: "#57503F",
+            fontStyle: "italic",
           }}
         >
-          <span>Webmob Software Solutions</span>
-          <span>·</span>
-          <span>ex-Infosys (London)</span>
-          <span>·</span>
-          <span>{personal.location}</span>
+          <span>End-to-end products, and the engineers who ship them.</span>
+          <span style={{ color: "#C8401F" }}>fig. 01</span>
         </div>
       </div>
     ),
-    { ...size }
+    { ...size },
   );
 }

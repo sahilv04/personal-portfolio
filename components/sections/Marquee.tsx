@@ -1,43 +1,43 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
-
-const items = [
+const ITEMS = [
   "React",
   "Angular",
   "TypeScript",
-  "JavaScript",
   "Node.js",
-  "Express",
-  "MongoDB",
-  "REST APIs",
+  "Next.js",
   "AWS",
-  "Cloud",
-  "Docker",
-  "Webpack",
-  "Vite",
-  "Jest",
-  "Cypress",
+  "GraphQL",
+  "MongoDB",
+  "Micro-Frontends",
+  "Technical Leadership",
   "Opensource",
+  "Scrum Delivery",
 ];
 
+/** Ink ticker tape running between hero and body — pure CSS loop. */
 export default function Marquee() {
-  const reduce = useReducedMotion();
-  const row = [...items, ...items];
+  const row = (ariaHidden: boolean) => (
+    <ul
+      aria-hidden={ariaHidden || undefined}
+      className="flex shrink-0 items-center"
+    >
+      {ITEMS.map((item) => (
+        <li
+          key={item}
+          className="flex items-center whitespace-nowrap px-6 font-mono text-xs uppercase tracking-[0.22em] text-paper"
+        >
+          <span aria-hidden className="mr-6 text-vermilion">✦</span>
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
-    <div className="relative overflow-hidden border-y border-white/5 bg-white/[0.015] py-6">
-      <motion.div
-        animate={reduce ? undefined : { x: ["0%", "-50%"] }}
-        transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
-        className="flex w-max gap-10 whitespace-nowrap"
-      >
-        {row.map((it, i) => (
-          <span key={`${it}-${i}`} className="font-display text-2xl text-ink-muted md:text-3xl">
-            {it}
-            <span className="mx-6 text-accent">●</span>
-          </span>
-        ))}
-      </motion.div>
+    <div className="overflow-hidden border-y-2 border-ink bg-ink py-3">
+      <div className="flex w-max animate-marquee">
+        {row(false)}
+        {row(true)}
+      </div>
     </div>
   );
 }

@@ -1,49 +1,57 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { faqs as defaultFaqs, type FAQ as FAQItem } from "@/content/faq";
 
+/**
+ * Q&A column — questions as entries, answers folding open beneath.
+ * Answers stay in the DOM at all times (collapsed via grid-rows) so search
+ * and AI crawlers read the full text; only the reveal is interactive.
+ */
 export default function FAQ({ items = defaultFaqs }: { items?: FAQItem[] }) {
   const [open, setOpen] = useState<number | null>(0);
+
   return (
-    <div className="mx-auto max-w-3xl divide-y divide-white/5 rounded-2xl border border-white/8 bg-white/[0.02]">
-      {items.map((f, i) => {
+    <dl className="double-rule border-b border-ink/20">
+      {items.map((item, i) => {
         const isOpen = open === i;
         return (
-          <div key={f.q}>
-            <button
-              type="button"
-              onClick={() => setOpen(isOpen ? null : i)}
-              aria-expanded={isOpen}
-              className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-ink"
-            >
-              <span className="font-display text-base md:text-lg">{f.q}</span>
-              <span
-                aria-hidden
-                className={`grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 transition ${isOpen ? "rotate-45 bg-white/10" : ""}`}
+          <div key={item.q} className="border-b border-ink/15 last:border-b-0">
+            <dt>
+              <button
+                type="button"
+                onClick={() => setOpen(isOpen ? null : i)}
+                aria-expanded={isOpen}
+                className="group flex w-full items-baseline gap-4 py-5 text-left md:gap-6"
               >
-                +
-              </span>
-            </button>
-            <AnimatePresence initial={false}>
-              {isOpen && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  className="overflow-hidden"
+                <span className="font-mono text-xs text-vermilion">
+                  Q{String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="wonk flex-1 font-display text-xl font-semibold text-ink transition-colors group-hover:text-vermilion md:text-2xl">
+                  {item.q}
+                </span>
+                <span
+                  aria-hidden
+                  className={`font-mono text-lg text-ink-faint transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}
                 >
-                  <p className="px-6 pb-6 text-sm leading-relaxed text-ink-dim md:text-[15px]">
-                    {f.a}
-                  </p>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                  +
+                </span>
+              </button>
+            </dt>
+            <dd
+              className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+              }`}
+            >
+              <div className="overflow-hidden">
+                <p className="max-w-3xl pb-6 pl-10 italic leading-relaxed text-ink-soft md:pl-14">
+                  {item.a}
+                </p>
+              </div>
+            </dd>
           </div>
         );
       })}
-    </div>
+    </dl>
   );
 }

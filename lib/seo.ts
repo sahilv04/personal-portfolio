@@ -17,6 +17,16 @@ export const defaultKeywords = [
   "London Developer",
   "Opensource Developer",
   "Enterprise Web Applications",
+  "MERN Stack Developer",
+  "Next.js Developer",
+  "TypeScript Developer",
+  "AWS Solutions Architect Associate",
+  "AWS Certified AI Practitioner",
+  "Chandigarh Developer",
+  "Software Engineer India",
+  "Micro Frontend Architecture",
+  "Engineering Team Lead",
+  "Hire Full Stack Engineer",
 ];
 
 type BuildArgs = {

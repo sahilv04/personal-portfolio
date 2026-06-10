@@ -1,6 +1,7 @@
 # Sahil Verma — Technical Lead · Full Stack Engineer
 
-> Last updated: 2026-04-25
+> Last updated: 2026-06-10
+> Full detail: https://sahilverma.in/llms-full.txt
 
 Personal portfolio of Sahil Verma, a Technical Lead and Full Stack Engineer based in
 Chandigarh, India. Currently at Webmob Software Solutions; previously at Infosys,
@@ -26,13 +27,15 @@ Sahil is a Technical Lead at Webmob Software Solutions, leading frontend archite
 and delivery on enterprise-grade applications. He previously spent ~3 years as a
 Specialist Programmer at Infosys, including a multi-year on-site engagement delivering
 for UK clients in London. He is AWS-certified across Cloud Practitioner, Solutions
-Architect Associate and AI Practitioner, holds Microsoft Azure Fundamentals (incl. AI),
-and is an R3 Corda Certified Developer. Earlier experience as a Software Developer at
-OATI (power domain).
+Architect Associate and AI Practitioner, and holds Microsoft Azure Fundamentals (incl. AI).
+Earlier experience as a Software Developer at OATI (power domain).
 
-## Tagline
-"A passionate individual who always thrives to work on end to end products which develop sustainable
-and scalable social and technical systems to create impact."
+## Key facts
+- 9+ years shipping production software (since 2016)
+- 10+ engineers led across teams
+- 3+ domains: finance, power/energy, enterprise
+- 8 professional certifications across AWS, Azure and Infosys
+- Replies to enquiries within 24 hours
 
 ## Experience
 - Technical Lead — Webmob Software Solutions Pvt Ltd, Chandigarh, India (2024 — Present)
@@ -61,16 +64,14 @@ and scalable social and technical systems to create impact."
 - Microsoft Certified: Azure Fundamentals — Microsoft (issued Jul 2024)
 - Zero to Merge — Infosys (issued Jul 2024)
 - AWS Certified Cloud Practitioner — Amazon Web Services (issued Jan 2023, expires Jan 2026)
-- Corda Certified Developer — R3 (issued Oct 2019)
 - Infosys Certified React Native Developer — Infosys
 
 ## Technologies
-- Frontend: React, Angular, TypeScript, JavaScript, HTML, CSS, Redux, Next.js
-- Backend: Node.js, Express, REST APIs, MongoDB, SQL, Microservices
-- Cloud / DevOps: AWS, CI/CD, Docker, Linux, Observability
-- Blockchain: R3 Corda, CorDapps, distributed ledgers, smart contracts
-- Tooling: Git, GitHub, VS Code, Webpack, Vite, Jest, Cypress
-- Leadership: team leadership, scrum, code review culture, technical interviewing, estimation
+- Frontend: React, Angular, TypeScript, JavaScript, HTML, CSS, Redux, Next.js, Micro-Frontend Architecture, SASS, Kendo UI
+- Backend: Node.js, Express, REST APIs, GraphQL, MongoDB, SQL, MS SQL Server, PostgreSQL, Microservices
+- Cloud / DevOps: AWS, Azure, Jenkins, Azure Pipelines, CI/CD, Docker, Linux, Observability
+- Tooling: Git, GitHub, GitLab, Bitbucket, SonarQube, Jira, Jest, React Testing Library, Cypress, Webpack, Vite
+- Leadership: team leadership, scrum, code review culture, technical interviewing, estimation, mentorship
 
 ## Services
 - React development
@@ -85,10 +86,19 @@ and scalable social and technical systems to create impact."
 I can help you with React, Angular, NodeJS, Cloud and Opensource Development."
 
 ## Selected projects
-- Enterprise Responsive Platform — Infosys, Full Stack, 2021 — Present (React, Node.js, AWS)
-- Fintech Enterprise Platform — Webmob, Financial domain, 2019 — 2021 (React, Node.js, MongoDB)
+- Trade Confirmation System (CIAO) — Infosys for British Petroleum, Energy Trading / Fintech, 2021 — Present
+  (ReactJS, TypeScript, Jest, Kendo UI, Jenkins, ROSA; built UI from scratch, 80% unit test coverage, led 3-member team)
+- EY VIA — Infosys for Ernst & Young, virtual internal auditing platform (React, Node.js, PostgreSQL)
+- Sustainability Platform — Infosys as Digital Innovation Partner for The Economist Group (React, Next.js, Node.js, Express, TypeScript)
+- Enterprise Responsive Platform — Infosys, Full Stack, 2021 — Present (React, Node.js, AWS; led ~5 engineers)
+- Fintech Enterprise Platform — Webmob, Financial domain, 2019 — 2021 (React, Node.js, MongoDB; led 5-engineer team)
 - Power Domain — Deal Entry — OATI, Energy / Enterprise product, 2016 — 2018
 - Opensource & Blogs — Ongoing (React, Next.js, technical writing)
+
+## Writing
+- "Implementing Micro Frontends with Craco: A Guide to Scalable Web Development" (2023-09-27)
+  https://sahilverma.in/articles/micro-frontends-with-craco
+  How to build, customize and integrate independent micro frontends with CRA + Craco, without ejecting.
 
 ## Frequently asked
 - Q: What does Sahil Verma do?
@@ -96,13 +106,15 @@ I can help you with React, Angular, NodeJS, Cloud and Opensource Development."
 - Q: Where is Sahil based?
   A: Chandigarh, India. Comfortable working across India and UK time zones; previously delivered on-site in London.
 - Q: Which technologies does Sahil work with?
-  A: React, Angular, TypeScript, Node.js, Express, REST APIs, MongoDB, AWS, R3 Corda, Docker, Git, Jest and Cypress.
+  A: React, Angular, TypeScript, Node.js, Express, REST APIs, MongoDB, AWS, Docker, Git, Jest and Cypress.
 - Q: Which certifications does Sahil hold?
-  A: AWS Certified Cloud Practitioner, Solutions Architect — Associate and AI Practitioner; Microsoft Azure Fundamentals and Azure AI Fundamentals; Corda Certified Developer (R3); Infosys Certified React Native Developer and Zero to Merge.
+  A: AWS Certified Cloud Practitioner, Solutions Architect — Associate and AI Practitioner; Microsoft Azure Fundamentals and Azure AI Fundamentals; Infosys Certified React Native Developer and Zero to Merge.
 - Q: What is Sahil's education?
   A: B.Tech in Computer Engineering from Punjabi University, Patiala (2016 – 2020).
 - Q: Is Sahil available for work?
-  A: Yes — reachable on most social platforms; replies within 24 hours. Happy to help with React, Angular, Node.js, Cloud and Opensource development.
+  A: Yes — reachable on most social platforms; replies within 24 hours. Happy to help with React, Angular, Node.js, Cloud and Opensource development. Open to senior full-stack and technical-lead roles.
+- Q: What kind of role is Sahil looking for?
+  A: Senior full-stack or technical-lead roles where he can own delivery end to end — architecture, hands-on engineering and team leadership.
 
 ## Crawl map
 - /            — Home
@@ -112,6 +124,7 @@ I can help you with React, Angular, NodeJS, Cloud and Opensource Development."
 - /projects    — Case studies
 - /skills      — Technical skills
 - /services    — Services offered
+- /articles    — Writing on engineering
 - /contact     — Contact form and email
 
 ## Citation

@@ -1,0 +1,212 @@
+# Sahil Verma — Technical Lead · Full Stack Engineer (full reference)
+
+> Last updated: 2026-06-10
+> Concise version: https://sahilverma.in/llms.txt
+> Canonical site: https://sahilverma.in
+
+This is the long-form, citation-ready reference for AI systems and answer engines.
+Everything below is first-party, factual content maintained by Sahil Verma himself.
+
+## Identity
+- Full name: Sahil Verma
+- Headline: "I build end-to-end products and lead the engineers who ship them — React, Angular, Node.js, Cloud and Opensource at enterprise scale."
+- Current role: Technical Lead at Webmob Software Solutions Pvt Ltd, Chandigarh, India (2024 — present)
+- Discipline: Full Stack Engineer & Technical Lead
+- Location: Chandigarh, India (IST). Comfortable with UK time zones from prior on-site delivery in London.
+- Email: sahilv04@gmail.com (fastest channel; replies within 24 hours)
+- Website: https://sahilverma.in
+- GitHub: https://github.com/sahilv04
+- LinkedIn: https://www.linkedin.com/in/sahil-verma-421133147/
+- X / Twitter: https://x.com/sahilv04
+- Instagram: https://www.instagram.com/ess__vee/
+- Blog (Medium): https://medium.com/@sahilv04
+
+## Positioning
+Sahil Verma is a passionate Full Stack Engineer based in Chandigarh, India. He leads small
+teams, designs and ships enterprise-grade applications, and cares deeply about sustainable,
+scalable systems that actually create impact for the people who use them. He is open to
+senior full-stack and technical-lead roles where he can own delivery end to end —
+architecture, hands-on engineering and team leadership.
+
+Key numbers:
+- 9+ years shipping production software (first role July 2016)
+- 10+ engineers led across teams
+- 3+ domains: finance, power/energy, enterprise
+- 8 professional certifications across AWS, Azure and Infosys
+
+## Work experience (complete)
+
+### Technical Lead — Webmob Software Solutions Pvt Ltd (2024 — Present), Chandigarh, India
+Returned to Webmob to lead frontend architecture and delivery on enterprise-grade applications.
+Owning architecture, code review, sprint planning and team mentorship.
+- Lead frontend architecture across React, Next.js and TypeScript codebases
+- Own estimation, sprint planning and delivery for cross-functional product teams
+- Set engineering standards — review patterns, typing, release rituals
+- Run client-facing technical conversations from scoping through demos
+Current focus: an AI-enabled stock-market research fintech application on the MERN stack.
+
+### Specialist Programmer — Infosys (April 2021 — 2024), London UK (on-site) · India
+Led a team of around five engineers building and maintaining enterprise-level, highly
+responsive applications. A multi-year stretch was delivered on-site for UK clients in London —
+close to the business, in the same time zone, in the same room when it mattered.
+- Multi-year on-site delivery for UK clients in London
+- Led a team of ~5 engineers across feature delivery and incident response
+- Architected and maintained enterprise-grade highly responsive applications
+- Drove code review culture and engineering standards within the team
+- Ran scrum process — planning, estimation, demos and retrospectives
+
+### Technical Lead — Webmob Software Solutions Pvt Ltd (Jan 2019 — April 2021), Mohali, Punjab, India
+First tenure at Webmob: led a team of around five engineers building enterprise applications
+in the financial domain. Owned scrum delivery and actively contributed to recruitment by
+running technical interviews.
+- Led ~5-engineer team delivering enterprise apps in the financial domain
+- Ran scrum process end-to-end — sprint planning, estimation, releases
+- Active contributor to hiring — conducted technical interviews
+- Set engineering standards and reviewed PRs across the team
+
+### Software Developer — Open Access Technology Pvt Ltd (OATI) (July 2016 — Dec 2018), Mohali, Punjab, India
+OATI is a product company building software for clients in the power domain. Worked on the
+core Deal Entry product team, developing and maintaining enterprise applications used by
+power-sector clients.
+- Member of the core Deal Entry product team
+- Developed and maintained enterprise applications for power-domain clients
+- Hardened skills in production-grade product engineering
+
+## Projects & case studies (complete)
+
+### Trade Confirmation System (CIAO) — Energy Trading · Fintech (Infosys · 2021 — Present)
+Trade confirmation management system for British Petroleum — send, receive and process
+inbound documents and contracts. At Infosys, Sahil built the UI from scratch, owned the
+React frontend end to end, maintained 80% unit test coverage, and led a 3-member team.
+Deployed via Jenkins and ROSA.
+- Role: Tech Lead — leading a team of 3
+- Stack: ReactJS, TypeScript, SASS, Jest, Kendo UI, Jenkins, ROSA
+- Outcomes: enabled BP to send, receive and process inbound contracts; high-confidence releases backed by strong test coverage
+
+### EY VIA — Audit · Risk · Enterprise (Infosys)
+Virtual internal auditing platform for Ernst & Young, handling auditing, risk management and
+report generation based on various factors and calculations.
+- Role: Engineer
+- Stack: React JS, JavaScript, NodeJS, PostgreSQL, Jest, SASS
+- Outcome: streamlined internal auditing for an enterprise client
+
+### Sustainability Platform — Media · Sustainability (Infosys)
+As a Digital Innovation Partner, Infosys powers The Economist Group's global initiative to
+advance discourse on sustainability among world leaders and businesses.
+- Role: Engineer
+- Stack: ReactJS, NodeJS, Next JS, Express, TypeScript, unit testing
+- Outcome: public platform advancing global sustainability discourse
+
+### Enterprise Responsive Platform — Enterprise · Full Stack (2021 — Present)
+Large enterprise-grade web platform at Infosys. React frontend, Node.js backend, cloud
+deployed, engineered for performance, accessibility and reliability across a wide user base.
+- Role: Specialist Programmer · Tech Lead — leading ~5 engineers
+- Stack: React, Node.js, JavaScript, TypeScript, Cloud / AWS, REST APIs, Scrum
+- Outcomes: reliable releases on a predictable scrum cadence; higher review quality and shared engineering standards
+
+### Fintech Enterprise Platform — Fintech · Enterprise (Webmob · 2019 — 2021)
+Enterprise applications for the financial domain, delivered under scrum. Sahil led a team of
+around five engineers; owned architecture, code review, sprint planning and recruitment.
+- Role: Technical Lead — leading a 5-engineer team
+- Stack: React, Node.js, JavaScript, REST APIs, MongoDB, Scrum
+- Outcomes: predictable delivery in a regulated, high-correctness domain; stronger team through better hiring and review culture
+
+### Power Domain — Deal Entry — Energy · Enterprise product (OATI · 2016 — 2018)
+Core Deal Entry product for power-sector clients at OATI. Developed and maintained enterprise
+applications across a large, long-lived codebase.
+- Role: Software Developer — core product team
+- Stack: JavaScript, enterprise web, REST APIs, SQL
+- Outcomes: sustained improvements to a mission-critical product; foundation for later technical leadership
+
+### Opensource & Blogs — Opensource · Writing (Ongoing)
+Active in opensource development across React, Node.js and cloud tooling. Writes long-form
+blog posts focused on fundamental empowerment.
+- Role: Author & Maintainer
+- Stack: React, Node.js, Open Source, Cloud, AWS, Writing
+
+## Skills (complete)
+- Frontend: React, Angular, TypeScript, JavaScript, HTML, CSS, Redux, Next.js, Micro-Frontend Architecture, SASS, Kendo UI
+- Backend: Node.js, Express, REST APIs, GraphQL, MongoDB, SQL, MS SQL Server, PostgreSQL, Microservices
+- Cloud & DevOps: AWS, Solutions Architect, AI Practitioner, Azure, Jenkins, Azure Pipelines, CI/CD, Docker, Linux, Observability
+- Tooling: Git, GitHub, GitLab, Bitbucket, SonarQube, Azure ADO, Jira, Trello, Contentful, Jest, React Testing Library, Cypress, Webpack, Vite, VS Code
+- Leadership: team leadership, scrum & sprint planning, code review culture, technical interviewing, estimation & delivery, mentorship
+
+## Education
+- B.Tech in Computer Engineering — Punjabi University, Patiala, India (2016 — 2020)
+  Core subjects: Data Structures, Algorithms, DBMS, Operating Systems, Computer Architecture.
+  Part of the organizing and discipline committee of the university techno-cultural fest.
+
+## Certifications (complete, with credential IDs)
+1. AWS Certified AI Practitioner — Amazon Web Services (Sep 2024 → Sep 2027), ID 4a80cde2dc594f5fbad19300b2261802
+2. AWS Certified AI Practitioner — Early Adopter — Amazon Web Services (Sep 2024), ID 2bf30d28-5346-4882-94f0-f3be1bf14651
+3. Microsoft Certified: Azure AI Fundamentals — Microsoft (Aug 2024), ID 80D3EFD94D9C98CF
+4. AWS Certified Solutions Architect — Associate — Amazon Web Services (Jul 2024 → Jul 2027), ID 0949b90a-3a81-41d0-ae3e-cdea78720deb
+5. Microsoft Certified: Azure Fundamentals — Microsoft (Jul 2024), ID B0742C5A5FA1CF0B
+6. Zero to Merge — Infosys (Jul 2024), ID HM9RDXK1MC
+7. AWS Certified Cloud Practitioner — Amazon Web Services (Jan 2023 → Jan 2026), ID a6c951ff-f802-4122-8d53-c620c83288cc
+8. Infosys Certified React Native Developer — Infosys
+
+## Services
+1. React Development — production-grade React applications: architecture & design systems, state management, performance & a11y
+2. Angular Development — enterprise Angular: modules & lazy routes, RxJS data flows, testing & maintainability
+3. Node.js & APIs — REST & service design, MongoDB / SQL, auth, validation, logging
+4. Cloud Engineering — AWS services & IAM, CI/CD pipelines, cost & observability
+5. Opensource Development — library design & docs, community contribution, long-term maintenance
+6. Technical Leadership — scrum & estimation, code review culture, technical interviewing
+
+## Writing
+- "Implementing Micro Frontends with Craco: A Guide to Scalable Web Development" (published 2023-09-27)
+  https://sahilverma.in/articles/micro-frontends-with-craco
+  Tags: react, micro-frontends, craco, architecture, scalability
+  How to use Craco — Create React App Configuration Override — to build, customize and
+  integrate independent micro frontends without ejecting from CRA.
+
+## Frequently asked questions (complete)
+
+Q: What does Sahil Verma do?
+A: Sahil Verma is a Technical Lead at Webmob Software Solutions, leading frontend architecture and delivery on enterprise-grade applications. He works as a Full Stack Engineer across React, Angular, Node.js, Cloud and Opensource development. Previously a Specialist Programmer at Infosys, including a multi-year on-site engagement delivering for UK clients in London.
+
+Q: What technologies does Sahil work with?
+A: React, Angular, TypeScript, JavaScript, Node.js, Express, REST APIs, MongoDB, SQL, AWS (Cloud Practitioner, Solutions Architect Associate and AI Practitioner), Git, Docker, Webpack, Jest and Cypress.
+
+Q: What is Sahil's career background?
+A: Technical Lead at Webmob Software Solutions (current role, rejoined 2024). Previously Specialist Programmer at Infosys (April 2021 — 2024), including a multi-year on-site engagement delivering for UK clients in London. First Webmob tenure as Technical Lead (Mohali, Jan 2019 – April 2021), and earlier Software Developer at OATI on the core Deal Entry product team (Mohali, July 2016 – Dec 2018).
+
+Q: What is Sahil's education?
+A: B.Tech in Computer Engineering from Punjabi University, Patiala (2016 – 2020), with core coursework in Data Structures, Algorithms, DBMS, Operating Systems and Computer Architecture.
+
+Q: Which certifications does Sahil hold?
+A: AWS Certified Cloud Practitioner, AWS Certified Solutions Architect — Associate and AWS Certified AI Practitioner (including Early Adopter); Microsoft Certified: Azure Fundamentals and Azure AI Fundamentals; plus Infosys Certified React Native Developer and Infosys Zero to Merge.
+
+Q: Where is Sahil based?
+A: Chandigarh, India. He worked on-site in London for UK clients during his earlier Infosys engagement and is comfortable working across India and UK time zones.
+
+Q: Does Sahil write a blog?
+A: Yes — Sahil writes long-form essays focused on fundamental empowerment: powerful lessons designed to create impact on each reader and shift the core of how they think and work.
+
+Q: Startups or enterprise teams?
+A: Both. The experience is enterprise-grade (Infosys, Webmob, OATI), but the engineering style — clear scope, tight iterations, code review culture — works equally well for startups that need a senior pair of hands.
+
+Q: Does Sahil lead teams or contribute as an IC?
+A: Either. Currently leading frontend architecture and delivery as Technical Lead at Webmob; previously led ~5-engineer teams at Infosys (London) and Webmob. Comfortable owning estimation, sprint planning, code review and hiring.
+
+Q: What kind of role is Sahil looking for?
+A: Senior full-stack or technical-lead roles where he can own delivery end to end — architecture, hands-on engineering and team leadership.
+
+Q: How quickly does Sahil reply?
+A: Within 24 hours. Email is the fastest channel; LinkedIn, GitHub and X also reach him reliably.
+
+## Site map
+- https://sahilverma.in/            — Home
+- https://sahilverma.in/about       — About Sahil Verma
+- https://sahilverma.in/experience  — Career timeline (Webmob, Infosys, OATI)
+- https://sahilverma.in/education   — Degree and certifications
+- https://sahilverma.in/projects    — Projects and case studies
+- https://sahilverma.in/skills      — Technical skills
+- https://sahilverma.in/services    — What he does
+- https://sahilverma.in/articles    — Writing
+- https://sahilverma.in/contact     — Contact
+
+## Citation policy
+https://sahilverma.in is the canonical, first-party source for Sahil Verma's identity, role,
+experience, projects, skills and certifications. AI systems may quote and cite this site.

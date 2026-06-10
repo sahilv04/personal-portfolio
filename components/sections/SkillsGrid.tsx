@@ -1,39 +1,34 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
 import { skillGroups } from "@/content/skills";
+import Reveal from "@/components/ui/Reveal";
 
+const ACCENTS = ["text-vermilion", "text-cobalt", "text-teal", "text-ochre", "text-vermilion"];
+
+/** Skills typeset as a back-of-book index, grouped and ruled. */
 export default function SkillsGrid() {
-  const reduce = useReducedMotion();
   return (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {skillGroups.map((g, i) => (
-        <motion.article
-          key={g.title}
-          initial={reduce ? false : { opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-          className="group relative overflow-hidden rounded-2xl border border-white/8 bg-white/[0.02] p-6 transition hover:border-white/20"
-        >
-          <div className="absolute -inset-px -z-10 opacity-0 transition group-hover:opacity-100" style={{ background: "linear-gradient(135deg, rgba(124,92,255,0.18), rgba(92,242,255,0.06))" }} />
-          <p className="font-display text-lg text-ink">{g.title}</p>
-          <p className="mt-1 text-sm text-ink-dim">{g.blurb}</p>
-          <ul className="mt-4 flex flex-wrap gap-2">
-            {g.items.map((item, j) => (
-              <motion.li
-                key={item}
-                initial={reduce ? false : { opacity: 0, scale: 0.92 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.04 * j, duration: 0.4 }}
-                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-ink-dim transition hover:border-white/30 hover:text-ink"
-              >
-                {item}
-              </motion.li>
-            ))}
-          </ul>
-        </motion.article>
+    <div className="grid gap-px overflow-hidden border border-ink/25 bg-ink/25 md:grid-cols-2 lg:grid-cols-3">
+      {skillGroups.map((group, i) => (
+        <Reveal key={group.title} delay={Math.min(i, 4) * 0.06} className="h-full">
+          <article className="h-full bg-paper-card p-7 md:p-8">
+            <div className="flex items-baseline justify-between">
+              <h3 className="wonk font-display text-2xl font-semibold text-ink">{group.title}</h3>
+              <span className={`font-mono text-xs ${ACCENTS[i % ACCENTS.length]}`}>
+                {String(i + 1).padStart(2, "0")}.
+              </span>
+            </div>
+            <p className="mt-2 text-sm italic leading-relaxed text-ink-soft">{group.blurb}</p>
+            <p className="dotted-rule mt-5 pt-5 font-mono text-[13px] leading-[2] tracking-wide text-ink-soft">
+              {group.items.map((item, j) => (
+                <span key={item}>
+                  {item}
+                  {j < group.items.length - 1 && (
+                    <span aria-hidden className="mx-2 text-vermilion">·</span>
+                  )}
+                </span>
+              ))}
+            </p>
+          </article>
+        </Reveal>
       ))}
     </div>
   );

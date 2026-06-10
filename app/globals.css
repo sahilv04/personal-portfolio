@@ -3,101 +3,177 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
-  --font-sans: "Inter", "Helvetica Neue", system-ui, sans-serif;
-  --font-display: "MedievalSharp", "Times New Roman", serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-}
-
-html, body {
-  background: #060611;
-  color: #f5f5fa;
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  color-scheme: light;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  background: #f3ede0;
+  color: #211d14;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-variation-settings: "opsz" 18, "SOFT" 30, "WONK" 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Paper grain laid over everything — the page should feel printed, not rendered. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.38'/></svg>");
+}
+
 ::selection {
-  background: rgba(124, 92, 255, 0.4);
-  color: #fff;
+  background: #c8401f;
+  color: #f3ede0;
 }
 
-.glass {
-  background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.text-gradient {
-  background: linear-gradient(120deg, #fff 0%, #c4b8ff 40%, #5cf2ff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.text-gradient-warm {
-  background: linear-gradient(120deg, #fff 0%, #ffb8e7 50%, #ff7ab8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.bg-grid {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-}
-
-.shine {
-  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.08) 45%, transparent 60%);
-  background-size: 200% 100%;
-}
-
-.divider {
-  height: 1px;
-  width: 100%;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,0.16), transparent);
-}
-
-a:focus-visible, button:focus-visible {
-  outline: 2px solid #7c5cff;
+:focus-visible {
+  outline: 2px solid #c8401f;
   outline-offset: 3px;
-  border-radius: 6px;
 }
 
+/* ——— Display type: big, wonky, human ——— */
+.font-display,
+.wonk {
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 1;
+}
+
+.soft-display {
+  font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 0;
+}
+
+/* ——— Editorial furniture ——— */
+.double-rule {
+  border-top: 3px double #211d14;
+}
+
+.double-rule-thick {
+  border-top: 1px solid #211d14;
+  box-shadow: 0 3px 0 0 #211d14;
+}
+
+.dotted-rule {
+  border-top: 1px dotted rgba(33, 29, 20, 0.45);
+}
+
+/* Hand-drawn underline stroke, drawn slightly off-true on purpose. */
+.hand-underline {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='10' viewBox='0 0 120 10' preserveAspectRatio='none'><path d='M2 7 Q 18 2, 38 6 T 76 5 T 118 6' fill='none' stroke='%23C8401F' stroke-width='2.6' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 0 96%;
+  background-size: 100% 0.16em;
+  padding-bottom: 0.08em;
+}
+
+/* Rubber stamp — distressed by a noise mask so no two renders feel identical. */
+.stamp {
+  display: inline-block;
+  border: 2.5px solid currentColor;
+  border-radius: 6px;
+  padding: 0.3em 0.7em;
+  font-family: var(--font-plex-mono), monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='80'><filter id='r'><feTurbulence type='fractalNoise' baseFrequency='0.16' numOctaves='4' stitchTiles='stitch'/><feComponentTransfer><feFuncA type='discrete' tableValues='0.55 1 1 1 0.8 1 1 0.9 1 1'/></feComponentTransfer><feComposite operator='in' in2='SourceGraphic'/></filter><rect width='100%25' height='100%25' fill='black' filter='url(%23r)'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='80'><filter id='r'><feTurbulence type='fractalNoise' baseFrequency='0.16' numOctaves='4' stitchTiles='stitch'/><feComponentTransfer><feFuncA type='discrete' tableValues='0.55 1 1 1 0.8 1 1 0.9 1 1'/></feComponentTransfer><feComposite operator='in' in2='SourceGraphic'/></filter><rect width='100%25' height='100%25' fill='black' filter='url(%23r)'/></svg>");
+}
+
+/* Strip of masking tape for pinned photos and notes. */
+.tape {
+  position: absolute;
+  width: 7rem;
+  height: 1.9rem;
+  background: rgba(234, 226, 205, 0.9);
+  border-left: 1px dashed rgba(33, 29, 20, 0.18);
+  border-right: 1px dashed rgba(33, 29, 20, 0.18);
+  box-shadow: 0 1px 2px rgba(33, 29, 20, 0.18);
+  opacity: 0.85;
+}
+
+/* Drop cap for long-form article bodies. */
+.dropcap > p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--font-fraunces), serif;
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 1;
+  font-weight: 600;
+  font-size: 4.6em;
+  line-height: 0.78;
+  padding-right: 0.12em;
+  padding-top: 0.06em;
+  color: #c8401f;
+}
+
+/* Halftone dot field for backgrounds. */
+.halftone {
+  background-image: radial-gradient(rgba(33, 29, 20, 0.28) 1px, transparent 1.6px);
+  background-size: 12px 12px;
+}
+
+/* Ledger paper: faint ruled lines like an accountant's notebook. */
+.ledger-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    rgba(33, 29, 20, 0.09) 27px,
+    rgba(33, 29, 20, 0.09) 28px
+  );
+}
+
+/* Marginalia — a scribbled aside in the gutter. */
+.marginalia {
+  font-family: var(--font-fraunces), serif;
+  font-style: italic;
+  font-variation-settings: "opsz" 14, "SOFT" 100, "WONK" 1;
+  color: #c8401f;
+}
+
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Reduce all the theatre for users who ask for it. */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .animate-spin-slow {
+    animation: none;
   }
 }
 
-/* hide scrollbar in 3d canvas fallback */
-canvas { display: block; }
-
-/* Hero word reveal — runs purely in CSS so the underlying HTML
-   ships fully-formed, crawler-readable text (no inline opacity:0). */
-@keyframes hero-word-in {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* Long-form article typography on paper. */
+.article-prose {
+  font-variation-settings: "opsz" 16, "SOFT" 40, "WONK" 0;
 }
-
-.hero-word {
-  display: inline-block;
-  animation: hero-word-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: var(--d, 0s);
+.article-prose :where(h2, h3, h4) {
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 1;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-word { animation: none; }
+.article-prose :where(pre) {
+  border-radius: 2px;
+  border: 1px solid #211d14;
+  box-shadow: 4px 4px 0 0 #211d14;
+}
+.article-prose :where(code):not(pre code) {
+  background: rgba(33, 29, 20, 0.07);
+  border: 1px solid rgba(33, 29, 20, 0.15);
+  border-radius: 3px;
+  padding: 0.08em 0.35em;
+  font-size: 0.86em;
 }

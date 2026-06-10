@@ -17,6 +17,9 @@ export default function SkillsPage() {
       <JsonLd data={breadcrumb([{ name: "Home", href: "/" }, { name: "Skills", href: "/skills" }])} />
       <JsonLd data={pageSchema({ type: "CollectionPage", name: "Skills of Sahil Verma", description: "Frontend (React, Angular), backend (Node.js), cloud (AWS) and technical leadership.", path: "/skills" })} />
       <Section
+        index="04"
+        relief="torus"
+        titleAs="h1"
         eyebrow="Skills"
         title="A full stack toolkit, sharpened on enterprise code."
         description="Frontend (React, Angular), backend (Node.js, REST), cloud (AWS) and the leadership rituals around them."

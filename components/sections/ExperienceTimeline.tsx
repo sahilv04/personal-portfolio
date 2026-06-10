@@ -1,34 +1,39 @@
 import { experiences } from "@/content/experience";
 import Reveal from "@/components/ui/Reveal";
 
+/** Career as a ledger — period in the left column, entry on the right. */
 export default function ExperienceTimeline() {
   return (
-    <ol className="relative">
-      <span aria-hidden className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-accent/60 via-white/10 to-transparent md:left-1/2" />
-      {experiences.map((e, i) => (
-        <Reveal as="li" key={`${e.company}-${e.period}`} delay={i * 0.06} className="relative mb-10 grid md:mb-14 md:grid-cols-2 md:gap-10">
-          <span
-            aria-hidden
-            className="absolute left-[10px] top-2 h-3 w-3 rounded-full bg-accent shadow-[0_0_18px_rgba(124,92,255,0.7)] md:left-1/2 md:-translate-x-1/2"
-          />
-          <div className={i % 2 === 0 ? "md:text-right md:pr-12" : "md:order-2 md:pl-12"}>
-            <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">{e.period}</p>
-            <h3 className="mt-2 font-display text-xl text-ink md:text-2xl">{e.role}</h3>
-            <p className="text-sm text-ink-dim">{e.company}</p>
-            <p className="text-xs text-ink-muted">{e.location}</p>
-          </div>
-          <div className={i % 2 === 0 ? "pl-10 md:pl-12" : "pl-10 md:order-1 md:pr-12 md:text-right"}>
-            <p className="text-sm leading-relaxed text-ink-dim">{e.summary}</p>
-            <ul className={`mt-4 grid gap-2 text-sm text-ink-dim ${i % 2 === 0 ? "" : "md:list-inside"}`}>
-              {e.highlights.map((h) => (
-                <li key={h} className="flex gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-ice" />
-                  <span>{h}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Reveal>
+    <ol className="double-rule">
+      {experiences.map((exp, i) => (
+        <li key={`${exp.company}-${exp.period}`} className="border-b border-ink/20">
+          <Reveal delay={Math.min(i, 3) * 0.05}>
+            <div className="grid gap-4 py-10 md:grid-cols-[200px_1fr] md:gap-10">
+              <div className="font-mono text-xs uppercase tracking-[0.18em] text-ink-soft">
+                <p className="text-vermilion">{exp.period}</p>
+                <p className="mt-2 text-ink-faint">{exp.location}</p>
+                <p aria-hidden className="wonk mt-4 hidden font-display text-5xl font-black text-ink/10 md:block">
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+              </div>
+              <div>
+                <h3 className="wonk font-display text-2xl font-semibold leading-tight text-ink md:text-3xl">
+                  {exp.role}
+                  <span className="soft-display font-medium italic text-ink-soft"> · {exp.company}</span>
+                </h3>
+                <p className="mt-4 max-w-3xl leading-relaxed text-ink-soft">{exp.summary}</p>
+                <ul className="mt-5 grid max-w-3xl gap-2 text-[15px] leading-relaxed text-ink-soft md:grid-cols-2 md:gap-x-8">
+                  {exp.highlights.map((h) => (
+                    <li key={h} className="flex gap-2.5">
+                      <span aria-hidden className="mt-[3px] text-vermilion">▸</span>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Reveal>
+        </li>
       ))}
     </ol>
   );

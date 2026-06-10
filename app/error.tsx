@@ -11,19 +11,20 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
   }, [error]);
 
   return (
-    <section className="relative grid min-h-[80svh] place-items-center px-4 pt-24">
-      <div className="absolute inset-0 bg-grid opacity-50" aria-hidden />
-      <div className="relative max-w-xl text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-ink-muted">Something broke</p>
-        <h1 className="mt-3 font-display text-5xl text-ink md:text-6xl">
-          A small turbulence.
+    <section className="grid min-h-[75svh] place-items-center px-5">
+      <div className="max-w-xl text-center">
+        <span className="stamp rotate-[4deg] text-xs text-ochre">Printing error</span>
+        <h1 className="wonk mt-8 font-display text-5xl font-bold text-ink md:text-6xl">
+          A smudge on the page.
         </h1>
-        <p className="mt-4 text-ink-dim">
+        <p className="mt-4 text-lg italic text-ink-soft">
           An unexpected error occurred. Try again — and if it keeps happening, get in touch.
         </p>
-        <div className="mt-8 flex justify-center gap-3">
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
           <Button onClick={reset}>Try again</Button>
-          <Button href="/" variant="ghost">Go home</Button>
+          <Button href="/" variant="ghost">
+            Go home
+          </Button>
         </div>
       </div>
     </section>

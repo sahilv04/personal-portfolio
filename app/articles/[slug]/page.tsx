@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import Section from "@/components/ui/Section";
 import CTA from "@/components/sections/CTA";
 import MdxContent from "@/components/mdx/MdxContent";
 import { buildMetadata } from "@/lib/seo";
@@ -65,39 +64,45 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           modified: article.updated,
           tags: article.tags,
           image: article.ogImage,
+          wordCount: article.body.trim().split(/\s+/).length,
+          readingTimeMinutes: article.readingTimeMinutes,
         })}
       />
-      <Section className="!py-24 md:!py-32">
-        <div className="max-w-3xl">
-          <Link href="/articles" className="text-sm text-ink-dim hover:text-ink">
-            ← All articles
-          </Link>
-          <div className="mt-6 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-ink-muted">
+      <article className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-24">
+        <Link
+          href="/articles"
+          className="font-mono text-xs uppercase tracking-[0.2em] text-ink-soft underline decoration-vermilion decoration-2 underline-offset-4 hover:text-ink"
+        >
+          ← All articles
+        </Link>
+
+        <header className="mt-10">
+          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 font-mono text-[11px] uppercase tracking-[0.22em] text-ink-faint">
             <time dateTime={article.date}>{formatDate(article.date)}</time>
-            <span className="h-1 w-1 rounded-full bg-white/20" />
+            <span aria-hidden className="text-vermilion">✦</span>
             <span>{article.readingTimeMinutes} min read</span>
           </div>
-          <h1 className="mt-4 font-display text-4xl tracking-tight text-ink md:text-6xl">
+          <h1 className="wonk mt-5 font-display text-4xl font-semibold leading-[1.04] tracking-tight text-ink md:text-6xl">
             {article.title}
           </h1>
-          <p className="mt-4 text-base text-ink-dim md:text-lg">{article.description}</p>
+          <p className="mt-5 text-lg italic leading-relaxed text-ink-soft md:text-xl">
+            {article.description}
+          </p>
           {article.tags.length > 0 && (
-            <div className="mt-6 flex flex-wrap gap-2">
-              {article.tags.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-ink-dim"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
+            <p className="dotted-rule mt-7 pt-4 font-mono text-[11px] tracking-wide text-ink-faint">
+              filed under: {article.tags.join(" · ")}
+            </p>
           )}
-          <div className="prose prose-invert mt-12 max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-accent-ice prose-pre:rounded-2xl prose-pre:border prose-pre:border-white/10 prose-code:before:content-none prose-code:after:content-none">
-            <MdxContent source={article.body} />
-          </div>
+        </header>
+
+        <div className="article-prose dropcap prose prose-lg mt-12 max-w-none prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-ink prose-p:text-ink-soft prose-a:text-vermilion prose-a:decoration-2 prose-a:underline-offset-4 prose-strong:text-ink prose-blockquote:border-l-vermilion prose-blockquote:font-serif prose-blockquote:italic prose-blockquote:text-ink-soft prose-li:text-ink-soft prose-code:before:content-none prose-code:after:content-none">
+          <MdxContent source={article.body} />
         </div>
-      </Section>
+
+        <p className="double-rule mt-16 pt-6 text-center font-mono text-[11px] uppercase tracking-[0.3em] text-ink-faint">
+          — fin —
+        </p>
+      </article>
       <CTA />
     </>
   );

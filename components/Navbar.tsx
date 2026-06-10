@@ -3,147 +3,133 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/experience", label: "Experience" },
-  { href: "/education", label: "Education" },
-  { href: "/projects", label: "Projects" },
-  { href: "/skills", label: "Skills" },
-  { href: "/services", label: "What I Do" },
-  { href: "/articles", label: "Articles" },
-  { href: "/contact", label: "Contact" },
+const NAV = [
+  { href: "/about", label: "About", index: "01" },
+  { href: "/experience", label: "Experience", index: "02" },
+  { href: "/projects", label: "Work", index: "03" },
+  { href: "/skills", label: "Skills", index: "04" },
+  { href: "/articles", label: "Writing", index: "05" },
+  { href: "/contact", label: "Contact", index: "06" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    setOpen(false);
+  }, [pathname]);
 
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-40 transition-all duration-500",
-        scrolled ? "py-2" : "py-4"
-      )}
-    >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4">
-        <div
-          className={cn(
-            "flex w-full items-center justify-between rounded-2xl border border-white/5 px-4 py-2.5 transition-all",
-            scrolled ? "glass shadow-[0_8px_30px_rgba(0,0,0,0.35)]" : "bg-transparent"
-          )}
-        >
-          <Link href="/" className="group flex items-center gap-2 font-display text-lg tracking-tight">
-            <span className="relative inline-block h-7 w-7">
-              <span className="absolute inset-0 rounded-md bg-gradient-to-br from-accent via-accent-hot to-accent-ice opacity-90" />
-              <span className="absolute inset-[2px] rounded-[5px] bg-bg" />
-              <span className="absolute inset-0 grid place-items-center text-[11px] font-bold tracking-tight text-white">
-                SV
-              </span>
-            </span>
-            <span className="hidden text-ink sm:block">Sahil Verma</span>
+    <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur-sm">
+      {/* Folio strip — the newspaper dateline */}
+      <div className="border-b border-ink/20">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-1.5 font-mono text-[10px] uppercase tracking-[0.22em] text-ink-faint md:px-8">
+          <span>Est. 2016 — Chandigarh, IN</span>
+          <span className="hidden sm:inline">The collected work of a full stack engineer</span>
+          <span>Vol. IX</span>
+        </div>
+      </div>
+
+      <div className="double-rule-thick border-b border-ink/0">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3.5 md:px-8">
+          <Link
+            href="/"
+            className="wonk font-display text-xl font-bold tracking-tight text-ink md:text-2xl"
+          >
+            Sahil&nbsp;Verma<span className="text-vermilion">.</span>
           </Link>
 
-          <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
-            {links.map((link) => {
-              const active = pathname === link.href;
+          <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
+            {NAV.map((item) => {
+              const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
               return (
                 <Link
-                  key={link.href}
-                  href={link.href}
+                  key={item.href}
+                  href={item.href}
                   className={cn(
-                    "relative rounded-xl px-3 py-1.5 text-sm transition-colors",
-                    active ? "text-ink" : "text-ink-dim hover:text-ink"
+                    "group font-mono text-[12px] uppercase tracking-[0.16em] transition-colors",
+                    active ? "text-vermilion" : "text-ink-soft hover:text-ink",
                   )}
                 >
-                  {active && (
-                    <motion.span
-                      layoutId="nav-pill"
-                      className="absolute inset-0 -z-10 rounded-xl bg-white/5"
-                      transition={{ type: "spring", stiffness: 320, damping: 28 }}
-                    />
-                  )}
-                  {link.label}
+                  <span className="mr-1 text-[9px] text-ink-faint group-hover:text-vermilion">
+                    {item.index}
+                  </span>
+                  {item.label}
                 </Link>
               );
             })}
           </nav>
 
-          <Link
-            href="/contact"
-            className="hidden rounded-xl bg-white text-bg px-3.5 py-1.5 text-sm font-medium transition hover:bg-white/90 md:inline-flex"
-          >
-            Get in touch
-          </Link>
-
           <button
             type="button"
-            onClick={() => setOpen((s) => !s)}
-            aria-label="Toggle menu"
+            onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
-            className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-ink"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 border-2 border-ink bg-paper-card shadow-offset-sm lg:hidden"
           >
-            <span className="sr-only">Menu</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              {open ? <path d="M6 6l12 12M6 18L18 6" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
-            </svg>
+            <span
+              className={cn(
+                "h-[2px] w-5 bg-ink transition-transform",
+                open && "translate-y-[4px] rotate-45",
+              )}
+            />
+            <span
+              className={cn(
+                "h-[2px] w-5 bg-ink transition-transform",
+                open && "-translate-y-[4px] -rotate-45",
+              )}
+            />
           </button>
         </div>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.18 }}
-            className="md:hidden mx-auto mt-2 max-w-6xl px-4"
-          >
-            <div className="glass rounded-2xl p-3">
-              <ul className="grid gap-1">
-                {links.map((link) => {
-                  const active = pathname === link.href;
-                  return (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className={cn(
-                          "block rounded-xl px-3 py-2 text-base",
-                          active ? "bg-white/5 text-ink" : "text-ink-dim hover:text-ink"
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  );
-                })}
-                <li className="pt-1">
+      {/* Mobile index — full-page table of contents */}
+      {open && (
+        <div className="absolute inset-x-0 top-full z-40 h-[calc(100svh-6.5rem)] overflow-y-auto border-t border-ink/20 bg-paper lg:hidden">
+          <nav className="mx-auto max-w-6xl px-5 py-8" aria-label="Mobile">
+            <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-faint">
+              Table of contents
+            </p>
+            <ul className="mt-4">
+              {NAV.map((item) => (
+                <li key={item.href} className="border-b border-ink/15">
                   <Link
-                    href="/contact"
-                    className="block rounded-xl bg-white px-3 py-2 text-base font-medium text-bg"
+                    href={item.href}
+                    className="flex items-baseline justify-between py-5"
                   >
-                    Get in touch
+                    <span className="wonk font-display text-3xl font-semibold text-ink">
+                      {item.label}
+                    </span>
+                    <span className="font-mono text-xs text-vermilion">{item.index}</span>
                   </Link>
                 </li>
-              </ul>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              ))}
+              <li className="border-b border-ink/15">
+                <Link href="/education" className="flex items-baseline justify-between py-5">
+                  <span className="wonk font-display text-3xl font-semibold text-ink">Education</span>
+                  <span className="font-mono text-xs text-vermilion">07</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="flex items-baseline justify-between py-5">
+                  <span className="wonk font-display text-3xl font-semibold text-ink">What I Do</span>
+                  <span className="font-mono text-xs text-vermilion">08</span>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

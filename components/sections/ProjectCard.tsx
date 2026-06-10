@@ -1,93 +1,87 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
-import Link from "next/link";
 import type { Project } from "@/content/projects";
-import { cn } from "@/lib/utils";
+import Reveal from "@/components/ui/Reveal";
 
-const accents: Record<Project["accent"], string> = {
-  violet: "from-[#7c5cff] via-[#5cbcff] to-[#5cf2ff]",
-  cyan: "from-[#5cf2ff] via-[#7c5cff] to-[#ff5cd6]",
-  magenta: "from-[#ff5cd6] via-[#ff8a5c] to-[#ffd35c]",
-  amber: "from-[#ffd35c] via-[#ff8a5c] to-[#ff5cd6]",
+/* Spot-colour mapping: the data's screen accents re-inked as print colours. */
+const ACCENTS: Record<Project["accent"], { text: string; border: string; stampRotate: string }> = {
+  violet: { text: "text-cobalt", border: "border-l-cobalt", stampRotate: "rotate-[5deg]" },
+  cyan: { text: "text-teal", border: "border-l-teal", stampRotate: "rotate-[-6deg]" },
+  magenta: { text: "text-vermilion", border: "border-l-vermilion", stampRotate: "rotate-[4deg]" },
+  amber: { text: "text-ochre", border: "border-l-ochre", stampRotate: "rotate-[-4deg]" },
 };
 
-export default function ProjectCard({ p, index }: { p: Project; index: number }) {
-  const reduce = useReducedMotion();
+export default function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const accent = ACCENTS[project.accent];
+  const folio = String(index + 1).padStart(2, "0");
+
   return (
-    <motion.article
-      initial={reduce ? false : { opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative overflow-hidden rounded-3xl border border-white/8 bg-white/[0.02] p-6 transition hover:border-white/20 md:p-8"
-    >
-      <div
-        aria-hidden
-        className={cn(
-          "pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full opacity-20 blur-3xl transition group-hover:opacity-40",
-          "bg-gradient-to-br",
-          accents[p.accent]
-        )}
-      />
-      <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-ink-muted">
-        <span>{p.domain}</span>
-        <span className="h-1 w-1 rounded-full bg-white/20" />
-        <span>{p.year}</span>
-      </div>
-      <h3 className="mt-4 font-display text-2xl text-ink md:text-3xl">{p.name}</h3>
-      <p className="mt-2 max-w-2xl text-sm text-ink-dim md:text-base">{p.tagline}</p>
-
-      <p className="mt-6 max-w-3xl text-sm leading-relaxed text-ink-dim md:text-[15px]">
-        {p.summary}
-      </p>
-
-      <div className="mt-6 grid gap-6 md:grid-cols-2">
-        <div>
-          <p className="text-[11px] uppercase tracking-[0.2em] text-ink-muted">Highlights</p>
-          <ul className="mt-3 grid gap-2 text-sm text-ink-dim">
-            {p.highlights.map((h) => (
-              <li key={h} className="flex gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                <span>{h}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <p className="text-[11px] uppercase tracking-[0.2em] text-ink-muted">Outcomes</p>
-          <ul className="mt-3 grid gap-2 text-sm text-ink-dim">
-            {p.outcomes.map((h) => (
-              <li key={h} className="flex gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-ice" />
-                <span>{h}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-6 text-[11px] uppercase tracking-[0.2em] text-ink-muted">Role</p>
-          <p className="mt-2 text-sm text-ink-dim">{p.role}</p>
-        </div>
-      </div>
-
-      <div className="mt-7 flex flex-wrap gap-2">
-        {p.stack.map((s) => (
-          <span
-            key={s}
-            className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-ink-dim"
-          >
-            {s}
-          </span>
-        ))}
-      </div>
-
-      <Link
-        href={`/projects#${p.slug}`}
-        className="mt-7 inline-flex items-center gap-2 text-sm text-ink underline-offset-4 hover:underline"
-        aria-label={`Read more about ${p.name}`}
+    <Reveal delay={Math.min(index, 2) * 0.06}>
+      <article
+        id={project.slug}
+        className="relative scroll-mt-32 border border-ink/25 bg-paper-card p-6 shadow-offset-sm md:p-10"
       >
-        Open case study
-        <span aria-hidden>→</span>
-      </Link>
-    </motion.article>
+        <span
+          className={`stamp absolute -top-3 right-5 text-[10px] ${accent.text} ${accent.stampRotate}`}
+        >
+          {project.year}
+        </span>
+
+        <div className="grid gap-8 md:grid-cols-[auto_1fr]">
+          <div className="select-none md:w-24">
+            <span className="wonk font-display text-6xl font-black leading-none text-ink/15 md:text-8xl">
+              {folio}
+            </span>
+          </div>
+
+          <div>
+            <p className={`font-mono text-[11px] uppercase tracking-[0.26em] ${accent.text}`}>
+              {project.domain}
+            </p>
+            <h3 className="wonk mt-2 font-display text-3xl font-semibold leading-tight text-ink md:text-4xl">
+              {project.name}
+            </h3>
+            <p className="mt-3 max-w-2xl text-lg italic leading-relaxed text-ink-soft">
+              {project.tagline}
+            </p>
+
+            <p className="mt-5 max-w-3xl leading-relaxed text-ink-soft">{project.summary}</p>
+
+            <div className="dotted-rule mt-6 grid gap-6 pt-6 md:grid-cols-2">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-faint">
+                  In the field
+                </p>
+                <ul className="mt-3 grid gap-2 text-[15px] leading-relaxed text-ink-soft">
+                  {project.highlights.map((h) => (
+                    <li key={h} className="flex gap-2.5">
+                      <span aria-hidden className={`mt-[3px] ${accent.text}`}>▸</span>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-faint">
+                  What it changed
+                </p>
+                <ul className={`mt-3 grid gap-2 border-l-[3px] ${accent.border} pl-4 text-[15px] italic leading-relaxed text-ink-soft`}>
+                  {project.outcomes.map((o) => (
+                    <li key={o}>{o}</li>
+                  ))}
+                </ul>
+                <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-faint">
+                  Role
+                </p>
+                <p className="mt-1.5 text-sm text-ink-soft">{project.role}</p>
+              </div>
+            </div>
+
+            <p className="dotted-rule mt-6 pt-4 font-mono text-[11px] leading-relaxed tracking-wide text-ink-faint">
+              <span className="text-ink-soft">Set with:</span>{" "}
+              {project.stack.join("  /  ")}
+            </p>
+          </div>
+        </div>
+      </article>
+    </Reveal>
   );
 }

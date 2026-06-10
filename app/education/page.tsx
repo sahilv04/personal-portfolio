@@ -18,22 +18,27 @@ export default function EducationPage() {
       <JsonLd data={breadcrumb([{ name: "Home", href: "/" }, { name: "Education", href: "/education" }])} />
       <JsonLd data={pageSchema({ type: "CollectionPage", name: "Education and certifications of Sahil Verma", description: "B.Tech in Computer Engineering, AWS and Azure certifications.", path: "/education" })} />
       <Section
+        index="07"
+        relief="dodeca"
+        titleAs="h1"
         eyebrow="Education"
         title="Basic qualification and certifications."
         description="Degrees received and professional certifications that back the engineering work."
       >
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2">
           {degrees.map((d, i) => (
             <Reveal key={d.institution} delay={i * 0.06}>
-              <article className="rounded-2xl border border-white/8 bg-white/[0.02] p-6 md:p-8">
-                <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">{d.period}</p>
-                <h3 className="mt-3 font-display text-xl text-ink md:text-2xl">{d.institution}</h3>
-                <p className="mt-1 text-sm text-ink-dim">{d.degree}</p>
-                <p className="text-xs text-ink-muted">{d.location}</p>
-                <ul className="mt-5 grid gap-2 text-sm text-ink-dim">
+              <article className="relative border border-ink/25 bg-paper-card p-7 shadow-offset-sm md:p-9">
+                <span className="stamp absolute -top-3 right-6 rotate-[4deg] text-[10px] text-teal">
+                  {d.period}
+                </span>
+                <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-ink-faint">{d.location}</p>
+                <h3 className="wonk mt-3 font-display text-2xl font-semibold text-ink md:text-3xl">{d.institution}</h3>
+                <p className="mt-2 text-lg italic text-ink-soft">{d.degree}</p>
+                <ul className="dotted-rule mt-5 grid gap-2.5 pt-5 text-[15px] leading-relaxed text-ink-soft">
                   {d.highlights.map((h) => (
-                    <li key={h} className="flex gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    <li key={h} className="flex gap-2.5">
+                      <span aria-hidden className="mt-[3px] text-vermilion">▸</span>
                       <span>{h}</span>
                     </li>
                   ))}
@@ -43,9 +48,9 @@ export default function EducationPage() {
                     href={d.url}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="mt-6 inline-flex text-sm text-ink-dim underline-offset-4 hover:text-ink hover:underline"
+                    className="mt-6 inline-block font-mono text-xs uppercase tracking-[0.2em] text-ink-soft underline decoration-vermilion decoration-2 underline-offset-4 hover:text-ink"
                   >
-                    Visit website →
+                    Visit website ↗
                   </a>
                 )}
               </article>
@@ -55,32 +60,35 @@ export default function EducationPage() {
       </Section>
 
       <Section
+        index="08"
         eyebrow="Certifications"
         title="Professional certifications."
         description="AWS (Cloud Practitioner, Solutions Architect Associate, AI Practitioner), Microsoft Azure (Fundamentals, AI Fundamentals) and Infosys credentials."
       >
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-px overflow-hidden border border-ink/25 bg-ink/25 md:grid-cols-2">
           {certifications.map((c, i) => (
-            <Reveal key={c.name} delay={i * 0.04}>
-              <article className="flex h-full flex-col rounded-2xl border border-white/8 bg-white/[0.02] p-6 md:p-7">
-                <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">{c.issuer}</p>
-                <h3 className="mt-3 font-display text-xl text-ink md:text-2xl">{c.name}</h3>
-                {c.description && <p className="mt-3 text-sm text-ink-dim">{c.description}</p>}
-                {(c.issued || c.expires) && (
-                  <p className="mt-4 text-xs text-ink-muted">
-                    {c.issued && <span>Issued {c.issued}</span>}
-                    {c.issued && c.expires && <span className="mx-2 text-ink-muted/60">·</span>}
-                    {c.expires && <span>Expires {c.expires}</span>}
-                  </p>
-                )}
-                {c.credentialId && (
-                  <p
-                    className="mt-2 truncate font-mono text-[11px] text-ink-muted"
-                    title={c.credentialId}
-                  >
-                    ID&nbsp;{c.credentialId}
-                  </p>
-                )}
+            <Reveal key={c.name} delay={Math.min(i % 2, 1) * 0.05} className="h-full">
+              <article className="flex h-full flex-col bg-paper-card p-7 md:p-8">
+                <div className="flex items-baseline justify-between gap-4">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-vermilion">{c.issuer}</p>
+                  <span className="font-mono text-xs text-ink-faint">{String(i + 1).padStart(2, "0")}.</span>
+                </div>
+                <h3 className="wonk mt-3 font-display text-xl font-semibold leading-snug text-ink md:text-2xl">{c.name}</h3>
+                {c.description && <p className="mt-3 text-[15px] italic leading-relaxed text-ink-soft">{c.description}</p>}
+                <div className="mt-auto">
+                  {(c.issued || c.expires) && (
+                    <p className="dotted-rule mt-5 pt-4 font-mono text-[11px] uppercase tracking-wide text-ink-faint">
+                      {c.issued && <span>Issued {c.issued}</span>}
+                      {c.issued && c.expires && <span className="mx-2">·</span>}
+                      {c.expires && <span>Expires {c.expires}</span>}
+                    </p>
+                  )}
+                  {c.credentialId && (
+                    <p className="mt-1.5 truncate font-mono text-[10px] text-ink-faint" title={c.credentialId}>
+                      ID&nbsp;{c.credentialId}
+                    </p>
+                  )}
+                </div>
               </article>
             </Reveal>
           ))}

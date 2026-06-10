@@ -1,25 +1,33 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Suspense } from "react";
-import { MedievalSharp } from "next/font/google";
+import { Fraunces, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 import AnalyticsTracker from "@/components/analytics/AnalyticsTracker";
-
-const medievalSharp = MedievalSharp({
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-  variable: "--font-display",
-});
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CursorTrail from "@/components/ui/CursorTrail";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { JsonLd, personSchema, websiteSchema, professionalServiceSchema } from "@/lib/jsonld";
 import { SITE_URL, personal } from "@/content/personal";
 import { defaultKeywords } from "@/lib/seo";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  display: "swap",
+  style: ["normal", "italic"],
+  axes: ["SOFT", "WONK", "opsz"],
+  variable: "--font-fraunces",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600"],
+  variable: "--font-plex-mono",
+});
 
 const SEO_TITLE = `${personal.name} — Fintech Full Stack Engineer · Technical Lead`;
 const SEO_DESCRIPTION = `${personal.name} — Fintech-focused Full Stack Engineer & Technical Lead. AWS Certified (SAA, AI, CP). Leading teams at Webmob across React, Angular, Node.js & Cloud; previously Specialist Programmer at Infosys delivering for UK clients.`;
@@ -69,22 +77,28 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   icons: { icon: "/favicon.svg" },
+  category: "technology",
   verification: {
     other: {
       "msvalidate.01": "53693C8309BC4753CF83A989893E0951",
     },
   },
+  other: {
+    "geo.region": "IN-CH",
+    "geo.placename": "Chandigarh",
+    ICBM: "30.7333, 76.7794",
+  },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#060611",
+  themeColor: "#F3EDE0",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`dark ${medievalSharp.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${plexMono.variable}`}>
       <head>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
@@ -99,20 +113,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
       </head>
-      <body className="min-h-screen bg-bg text-ink antialiased">
+      <body className="min-h-screen bg-paper text-ink antialiased">
         <JsonLd data={personSchema} />
         <JsonLd data={websiteSchema} />
         <JsonLd data={professionalServiceSchema} />
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-accent focus:px-4 focus:py-2 focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[90] focus:bg-vermilion focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:text-paper"
         >
           Skip to content
         </a>
         <Suspense fallback={null}>
           <AnalyticsTracker />
         </Suspense>
-        <CursorTrail />
+        <ScrollProgress />
         <Navbar />
         <main id="main">{children}</main>
         <Footer />

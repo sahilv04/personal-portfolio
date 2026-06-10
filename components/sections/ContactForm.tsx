@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { personal } from "@/content/personal";
 import { track } from "@/lib/analytics";
+
+const inputCls =
+  "mt-2 w-full border-0 border-b-2 border-ink/30 bg-transparent px-0 py-2.5 font-serif text-base text-ink placeholder:italic placeholder:text-ink-faint focus:border-vermilion focus:outline-none focus:ring-0";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sent">("idle");
@@ -23,57 +25,51 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-4">
-      <div className="grid gap-4 md:grid-cols-2">
+    <form onSubmit={onSubmit} className="grid gap-7">
+      <div className="grid gap-7 md:grid-cols-2">
         <label className="block">
-          <span className="block text-xs uppercase tracking-[0.18em] text-ink-muted">Name</span>
-          <input
-            required
-            name="name"
-            type="text"
-            className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-ink placeholder:text-ink-muted focus:border-accent focus:outline-none"
-            placeholder="Your name"
-          />
+          <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-soft">
+            01 — Your name
+          </span>
+          <input required name="name" type="text" className={inputCls} placeholder="Ada Lovelace" />
         </label>
         <label className="block">
-          <span className="block text-xs uppercase tracking-[0.18em] text-ink-muted">Email</span>
-          <input
-            required
-            name="email"
-            type="email"
-            className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-ink placeholder:text-ink-muted focus:border-accent focus:outline-none"
-            placeholder="you@company.com"
-          />
+          <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-soft">
+            02 — Email
+          </span>
+          <input required name="email" type="email" className={inputCls} placeholder="you@company.com" />
         </label>
       </div>
       <label className="block">
-        <span className="block text-xs uppercase tracking-[0.18em] text-ink-muted">What are you building?</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-soft">
+          03 — What are you building?
+        </span>
         <textarea
           required
           name="message"
           rows={6}
-          className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-ink placeholder:text-ink-muted focus:border-accent focus:outline-none"
+          className={`${inputCls} ledger-lines resize-y leading-[28px]`}
           placeholder="A short description of the product, team and timeline."
         />
       </label>
-      <div className="flex flex-wrap items-center gap-3">
-        <motion.button
-          whileHover={{ y: -1 }}
-          whileTap={{ scale: 0.98 }}
+      <div className="flex flex-wrap items-center gap-5">
+        <button
           type="submit"
-          className="rounded-full bg-white px-5 py-3 text-sm font-medium text-bg hover:bg-white/90"
+          className="inline-flex items-center gap-2 border-2 border-ink bg-ink px-6 py-3 font-mono text-sm font-semibold uppercase tracking-[0.14em] text-paper shadow-offset-red transition-transform duration-150 hover:-translate-y-[2px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
         >
-          Send via email →
-        </motion.button>
+          Post it →
+        </button>
         <a
           href={personal.socials.email}
           onClick={() => track("contact_click", { method: "email", location: "contact_form" })}
-          className="rounded-full border border-white/15 bg-transparent px-5 py-3 text-sm text-ink hover:bg-white/5"
+          className="marginalia text-sm"
         >
-          Or just write to {personal.email}
+          or skip the form — {personal.email}
         </a>
         {status === "sent" && (
-          <span className="text-xs text-accent-ice">Opening your email client…</span>
+          <span className="font-mono text-xs uppercase tracking-[0.18em] text-teal">
+            Opening your mail client…
+          </span>
         )}
       </div>
     </form>

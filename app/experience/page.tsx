@@ -17,6 +17,9 @@ export default function ExperiencePage() {
       <JsonLd data={breadcrumb([{ name: "Home", href: "/" }, { name: "Experience", href: "/experience" }])} />
       <JsonLd data={pageSchema({ type: "CollectionPage", name: "Experience of Sahil Verma", description: "Technical Lead at Webmob, Specialist Programmer at Infosys (London), Software Developer at OATI.", path: "/experience" })} />
       <Section
+        index="02"
+        relief="octa"
+        titleAs="h1"
         eyebrow="Experience"
         title="A timeline of full stack engineering and technical leadership."
         description="From OATI's Deal Entry product, through Technical Lead at Webmob, to Specialist Programmer at Infosys in London — leading teams and shipping enterprise software."
